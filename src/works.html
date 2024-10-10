@@ -1,0 +1,40 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+制作物
+{% endblock %}
+
+{% block main %}
+<article>
+    <section>
+        <h1>制作物</h1>
+        <section id="programs">
+            <h1>ソフトウェア</h1>
+            <ul>
+            {% for item in works.software %}
+            <section id="work_{{item.id}}">
+                <h1>{{item.title}}</h1>
+                <div class="tags">
+                    {% for tag in item.tags %}
+                    <span>{{tag}}</span>
+                    {% endfor %}
+                </div>
+                <p>{{item.description}}</p>
+                {% for link in item.links %}
+                <a href="{{link.href}}">{{link.text}}</a>
+                {% endfor %}
+            </section>
+            {% endfor %}
+            </ul>
+        </section>
+        <section id="slides">
+            <h1>スライド</h1>
+            <ul>
+                {% for item in works.slides %}
+                <li id="slides_{{item.id}}"><a href="{{item.href}}">『{{item.title}}』</a> @ {{item.event}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+</article>
+{% endblock %}

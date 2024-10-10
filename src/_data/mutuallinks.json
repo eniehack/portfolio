@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Azumabashi",
+        "url": "https://azumabashi.dev/links.gmi",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "public_yusuke",
+        "url": "https://www.yusuke.pub",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "Ekasilicon",
+        "url": "https://www.eka.earth/links",
+        "rel": ["friend", "met", "co-worker", "colleague"]
+    },
+    {
+        "name": "汽水創",
+        "url": "https://kisuisou.github.io/mypage/",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "らいらい",
+        "url": "https://lai-lai.info/Links/",
+        "rel": ["acquaintance", "met"],
+        "banner": {
+            "src": "https://lai-lai.info/imgs/banner.png",
+            "height": "40",
+            "width": "200"
+        }
+    },
+    {
+        "name": "raspi0124",
+        "url": "https://raspi0124.dev/links",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "Shingo Hattori",
+        "url": "https://llhi.org/",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "ぱうろ",
+        "url": "https://210o.net/contact",
+        "rel": ["acquaintance", "met"]
+    },
+    {
+        "name": "鶏南蛮そば",
+        "url": "https://sobatorinanban.github.io/about/",
+        "rel": ["friend", "met"]
+    },
+    {
+        "name": "ウルトラぶんぶく",
+        "url": "https://ultrabumbuku.dev/mutual-links",
+        "rel": ["acquaintance", "met"]
+    },
+    {
+        "name": "yuinoid",
+        "url": "https://yuinoid.neocities.org/",
+        "rel": ["contact"],
+        "banner": {
+            "src": "https://yuinoid.neocities.org/img/banner2.gif"
+        },
+        "description": "勝手にリンクさせてもらいました。分散型SNS年表の記述量に圧倒されます。"
+    }
+]

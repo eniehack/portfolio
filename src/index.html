@@ -1,0 +1,20 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+トップ
+{% endblock %}
+
+{% block main %}
+<article>
+    <h1>なかやばしのページ</h1>
+    <ul>
+        {% for link in links %}
+            {% if link.internal_link %}
+            <li><a href="{{ link.href | htmlBaseUrl }}">{{link.text}}</a></li>
+            {% else %}
+            <li><a href="{{ link.href }}">{{link.text}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</article>
+{% endblock %}

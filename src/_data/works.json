@@ -1,0 +1,24 @@
+{
+    "software": [
+        {
+            "id": "itf-vendingmachine",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/itf-vendingmachine",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "筑波大学自販機Map",
+            "description": "筑波大学構内の自動販売機を探すことができるサイトです。データはすべてOpenStreetMap由来です。",
+            "tag": ["sveltekit", "openstreetmap", "overpassapi"]
+        }
+    ],
+    "slides": [
+        {
+            "id": "until-lt0x03-xfn",
+            "href": "https://www.docswell.com/s/eniehack/57V371-until-lt0x03-xfn",
+            "title": "相互リンクに関係性を添えませんか",
+            "event": "UNTIL. LT #0x03"
+        }
+    ]
+}

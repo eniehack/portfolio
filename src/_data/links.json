@@ -1,0 +1,27 @@
+[
+    {
+      "href": "/profile",
+      "internal_link": true,
+      "text": "プロフィール（工事中）"
+    },
+    {
+      "href": "/mutual_links",
+      "internal_link": true,
+      "text": "相互リンク"
+    },
+    {
+      "href": "/works",
+      "internal_link": true,
+      "text": "制作物（工事中）"
+    },
+    {
+      "href": "/recipes",
+      "internal_link": true,
+      "text": "レシピ"
+    },
+    {
+      "href": "/planet",
+      "internal_link": true,
+      "text": "planet eniehack"
+    }
+]

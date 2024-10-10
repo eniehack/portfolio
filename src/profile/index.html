@@ -1,0 +1,84 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+プロフィール
+{% endblock %}
+
+{% block head %}
+<style>
+.commalist__items {
+	list-style: none;
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+  padding-left: 0;
+}
+
+section ul {
+  margin: 8px auto;
+}
+
+section h1 {
+  margin: 7.8px auto;
+}
+
+.commalist__items .commalist__item:not(:last-child)::after {
+  content: ",";
+}
+</style>
+{% endblock %}
+
+
+{% block main %}
+<article>
+    <section class="h-card h-resume">
+        <h1>プロフィール</h1>
+        <section id="biography">
+            <h1>名前</h1>
+            <p class="p-nickname">なかやばし</p>
+        </section>
+        <section id="interests">
+            <h1>興味・好きなもの</h1>
+            <ul class="commalist__items">
+                {% for item in profile.interests %}
+                <li class="commalist__item">{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section id="programming_skills">
+            <h1>プログラミング経験</h1>
+            <ul class="commalist__items">
+                {% for item in profile.programming.skills %}
+                <li class="p-skill commalist__item">{{item}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h1>趣味</h1>
+            <ul>
+                <li>街歩き、知らない道を歩くこと</li>
+                <li>考えること</li>
+                <li>読書</li>
+                <li>音楽を聞くこと</li>
+            </ul>
+        </section>
+        <section>
+            <h1>好きな言葉</h1>
+            <div>
+                <backquote>
+                    <p>人がひとりでいるのは良くない。</p>
+                    <footer><cite>創世記 2章18節</cite>より抜粋</footer>
+                </backquote>
+            </div>
+        </section>
+        <section id="links">
+            <h1>リンク</h1>
+            <ul>
+                {% for item in profile.links %}
+                <li><a class="p-contact u-url" href="{{item.uri}}" rel="me noopener">{{item.text}}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+</article>
+{% endblock %}

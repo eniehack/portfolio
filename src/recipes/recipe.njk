@@ -1,0 +1,44 @@
+---
+pagination:
+  data: recipes
+  size: 1
+  alias: recipe
+permalink: "recipes/{{recipe.id | slugify}}/"
+---
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+{{recipe.title}}
+{% endblock %}
+
+{% block main %}
+    <article class="h-recipe">
+        <h1 class="p-name">{{recipe.title}}</h1>
+        <p><data class="p-yield" value="{{recipe.serving}}">{{recipe.serving}}</data>人前</p>
+        <section id="ingredients">
+            <h2>材料</h2>
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                    <li class="p-ingredient">
+                        {{ingredient.name}} - 
+                        <span>{{ingredient.quantity}}</span>
+                        {% if ingredient.note %}
+                            <span>{{ingredient.note}}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section id="instructions" class="u-instructions">
+            <h2>つくり方</h2>
+            <ol>
+                {% for instruction in recipe.instructions %}
+                    <li>{{instruction}}</li>
+                {% endfor %}
+            </ol>
+        <section>
+    </article>
+    <a href="https://microformats.org/wiki/h-recipe">
+        <img src="http://www.boogdesign.com/images/buttons/microformat_enabled.png" />
+    </a>
+{% endblock %}

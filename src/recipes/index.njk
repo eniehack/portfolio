@@ -1,0 +1,22 @@
+---
+pagination:
+  data: recipes
+  size: 1
+---
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+レシピの一覧
+{% endblock %}
+
+{% block main %}
+<article>
+    <h1>レシピ</h1>
+    <p>口伝で聞いたレシピなどをここにまとめておく</p>
+    <ul>
+        {% for recipe in pagination.items %}
+        <li><a href="{{ ['/recipes/', recipe.id] | join | htmlBaseUrl }}">{{recipe.title}}</a></li>
+        {% endfor %}
+    </ul>
+</article>
+{% endblock %}

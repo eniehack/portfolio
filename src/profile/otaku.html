@@ -1,0 +1,58 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+プロフィール（オタク版）
+{% endblock %}
+
+{% block head %}
+<style>
+.commalist__items {
+	list-style: none;
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+  padding-left: 0;
+}
+
+section ul {
+  margin: 8px auto;
+}
+
+section h1 {
+  margin: 7.8px auto;
+}
+
+.commalist__items .commalist__item:not(:last-child)::after {
+  content: ",";
+}
+</style>
+{% endblock %}
+
+
+{% block main %}
+<article>
+    <h1>オタク版プロフィール</h1>
+    <section id="biography" class="h-card">
+        <h2>名前</h2>
+        <p class="p-nickname">なかやばし</p>
+    </section>
+    <section>
+      <h2>好きなキャラクター</h2>
+      <ul>
+        {% for item in profile.otaku.character %}
+        <li>{{item.name}} （{{item.work}}）</li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h2>好きな作品</h2>
+      <ul>
+        {% for item in profile.otaku.works %}
+        <li>{{item}}</li>
+        {% endfor %}
+    </section>
+    <section>
+      <h2></h2>
+    </section>
+</article>
+{% endblock %}

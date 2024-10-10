@@ -1,0 +1,39 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+相互リンク
+{% endblock %}
+
+{% block main %}
+<article>
+    <section>
+        <h1>相互リンク</h1>
+        {% for item in mutuallinks %}
+        <section>
+            <h1>{{item.name}}</h1>
+            {% if item.description %}
+            <p>{{item.description}}</p>
+            {% endif %}
+            {% if item.banner.src %}
+            <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
+                {% if item.banner.width and item.banner.height %}
+                <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                {% else %}
+                <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                {% endif %}
+            </a>
+            {% else %}
+            <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">{{item.name}}さんのサイト</a>
+            {% endif %}
+        </section>
+        {% endfor %}
+    </section>
+    <section id="how-to-join">
+        <h1>参加するには</h1>
+        <p><a href="{{ "/profile#links" | htmlBaseUrl }}">プロフィールページ中の「リンク」</a>から、リンクしてほしいURLと名前を送ってください。</p>
+    </section>
+</article>
+<aside>
+    <a href="http://gmpg.org/xfn"><img src="https://gmpg.org/xfn/xfn-btn.gif" alt="XFN Friendly" /></a>
+</aside>
+{% endblock %}

@@ -1,0 +1,65 @@
+{
+    "links": [
+        {
+            "uri": "https://blog.eniehack.net/",
+            "text": "ブログ",
+            "description": "技術的な内容を発信することが多いです。"
+        },
+        {
+            "uri": "https://scrapbox.io/eniehack/",
+            "text": "scrapbox",
+            "description": ""
+        },
+        {
+            "uri": "https://twitter.com/eniehack/",
+            "text": "twitter",
+            "description": ""
+        },
+        {
+            "uri": "https://mstdn.sublimer.me/eniehack/",
+            "text": "Fediverse",
+            "description": ""
+        },
+        {
+            "uri": "https://github.com/eniehack/",
+            "text": "github",
+            "description": ""
+        },
+        {
+            "uri": "xmpp:eniehack@jabber.eniehack.net",
+            "text": "XMPP/Jabber",
+            "description": ""
+        },
+        {
+            "uri": "https://zenn.dev/eniehack/",
+            "text": "zenn",
+            "description": ""
+        },
+        {
+            "uri": "https://wikidata.org/wiki/User:Eniehack",
+            "text": "wikidata",
+            "description": ""
+        },
+        {
+            "uri": "https://listenbrainz.org/user/eniehack/",
+            "text": "listenbrainz",
+            "description": ""
+        },
+        {
+            "uri": "https://musicbrainz.org/user/eniehack/",
+            "text": "musicbrainz",
+            "description": ""
+        }
+    ],
+    "interests": [
+        "図書館情報学",
+        "地理学",
+        "Semantic Web",
+        "World Wide Web",
+        "コンピュータネットワーク",
+        "Vim",
+        "Svelte",
+        "哲学",
+        "批評"
+    ]
+}
