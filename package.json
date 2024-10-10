@@ -1,15 +1,13 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "DEBUG=Eleventy* eleventy --watch --serve",
     "build": "rm -rf _site && NODE_ENV=production eleventy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
+  "license": "UNLICENSED",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
