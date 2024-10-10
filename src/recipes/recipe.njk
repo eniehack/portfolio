@@ -11,30 +11,58 @@ permalink: "recipes/{{recipe.id | slugify}}/"
 {{recipe.title}}
 {% endblock %}
 
+{% block head %}
+<style>
+.categories {
+	list-style: none;
+	display: flex;
+	gap: 5px;
+	flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.categories .p-category:not(:last-child)::after {
+  content: ",";
+}
+</style>
+{% endblock %}
+
 {% block main %}
     <article class="h-recipe">
         <h1 class="p-name">{{recipe.title}}</h1>
-        <p><data class="p-yield" value="{{recipe.serving}}">{{recipe.serving}}</data>人前</p>
+        <ul class="categories">
+            {%- for category in recipe.category %}
+            <li class="p-category">{{category}}</li>
+            {%- endfor -%}
+        </ul>
+        <p class="p-summary">
+            {{recipe.summary}}
+        </p>
         <section id="ingredients">
             <h2>材料</h2>
-            <ul>
-                {% for ingredient in recipe.ingredients %}
-                    <li class="p-ingredient">
-                        {{ingredient.name}} - 
-                        <span>{{ingredient.quantity}}</span>
-                        {% if ingredient.note %}
-                            <span>{{ingredient.note}}</span>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
+            <div>
+                <p>
+                    <data class="p-yield" value="{{recipe.serving}}">{{recipe.serving}}</data>人前
+                </p>
+                <ul>
+                    {%- for ingredient in recipe.ingredients %}
+                        <li class="p-ingredient">
+                            {{ingredient.name}} - 
+                            <span>{{ingredient.quantity}}</span>
+                            {%- if ingredient.note %}
+                                <span>{{ingredient.note}}</span>
+                            {% endif -%}
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
         </section>
         <section id="instructions" class="u-instructions">
             <h2>つくり方</h2>
             <ol>
-                {% for instruction in recipe.instructions %}
+                {%- for instruction in recipe.instructions %}
                     <li>{{instruction}}</li>
-                {% endfor %}
+                {% endfor -%}
             </ol>
         <section>
     </article>

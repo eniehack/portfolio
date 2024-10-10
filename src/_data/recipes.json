@@ -2,7 +2,9 @@
     {
         "id": "corn-bacon-soup-pasta",
         "title": "コーンとベーコンのスープパスタ",
+        "summary": "親が昔から作ってくれていた料理の1つ。",
         "serving": 4,
+        "category": ["パスタ"],
         "ingredients": [
             {
               "name": "クリームコーン",
@@ -58,6 +60,32 @@
             "コンソメを入れてひと煮立ちさせる（5分くらい？）",
             "麺を入れる",
             "塩コショウを足す"
+        ]
+    },
+    {
+        "id": "irish-cocoa",
+        "title": "アイリッシュココア",
+        "serving": 1,
+        "category": ["カクテル"],
+        "summary": "昔バイトしていたホームセンターの酒売り場で書いてあったカクテル。冬によく作って飲む。",
+        "ingredients": [
+            {
+                "name": "ココアパウダー",
+                "quantity": "適量"
+            },
+            {
+                "name": "牛乳",
+                "quantity": "適量"
+            },
+            {
+                "name": "ウイスキー",
+                "quantity": "適量",
+                "note": "ブラックニッカ deep blendで作るとうまい"
+            }
+        ],
+        "instructions": [
+            "ココアをつくる",
+            "ウイスキーを足す"
         ]
     }
 ]
