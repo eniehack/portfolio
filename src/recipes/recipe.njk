@@ -28,25 +28,25 @@ permalink: "recipes/{{recipe.id | slugify}}/"
 {% endblock %}
 
 {% block main %}
-    <article class="h-recipe">
-        <h1 class="p-name">{{recipe.title}}</h1>
+    <article class="h-recipe" itemscope itemtype="https://schema.org/Recipe">
+        <h1 class="p-name" itemprop="name">{{recipe.title}}</h1>
         <ul class="categories">
             {%- for category in recipe.category %}
             <li class="p-category">{{category}}</li>
             {%- endfor -%}
         </ul>
-        <p class="p-summary">
+        <p class="p-summary" itemprop="description">
             {{recipe.summary}}
         </p>
         <section id="ingredients">
             <h2>材料</h2>
             <div>
                 <p>
-                    <data class="p-yield" value="{{recipe.serving}}">{{recipe.serving}}</data>人前
+                    <data class="p-yield" itemprop="recipeYield" value="{{recipe.serving}}">{{recipe.serving}}</data>人前
                 </p>
                 <ul>
                     {%- for ingredient in recipe.ingredients %}
-                        <li class="p-ingredient">
+                        <li class="p-ingredient" itemprop="recipeIngredient">
                             {{ingredient.name}} - 
                             <span>{{ingredient.quantity}}</span>
                             {%- if ingredient.note %}
@@ -61,7 +61,9 @@ permalink: "recipes/{{recipe.id | slugify}}/"
             <h2>つくり方</h2>
             <ol>
                 {%- for instruction in recipe.instructions %}
-                    <li>{{instruction}}</li>
+                    <li itemprop="recipeInstructions" itemscope itemtype="https://schema.org/HowtoStep">
+                        <span itemprop="text">{{instruction}}</span>
+                    </li>
                 {% endfor -%}
             </ol>
         <section>

@@ -1,7 +1,7 @@
 ---
 pagination:
   data: recipes
-  size: 
+  size: 10
 ---
 {% extends "layouts/base.njk" %}
 
@@ -10,12 +10,16 @@ pagination:
 {% endblock %}
 
 {% block main %}
-<article>
-    <h1>レシピ</h1>
+<article itemscope itemtype="https://schema.org/ItemList">
+    <h1 itemprop="name">レシピ</h1>
     <p>口伝で聞いたレシピなどをここにまとめておく</p>
     <ul>
         {% for recipe in pagination.items %}
-        <li><a href="{{ ['/recipes/', recipe.id] | join | htmlBaseUrl }}">{{recipe.title}}</a></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ ['/recipes/', recipe.id] | join | htmlBaseUrl }}" itemprop="item">
+            <span itemprop="name">{{recipe.title}}</span>
+          </a>
+        </li>
         {% endfor %}
     </ul>
 </article>
