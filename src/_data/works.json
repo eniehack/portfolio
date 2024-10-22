@@ -6,11 +6,55 @@
                 {
                     "href": "https://github.com/eniehack/itf-vendingmachine",
                     "text": "GitHub"
+                },
+                {
+                    "href": "https://itf-vendingmachine.vercel.app/",
+                    "text": "使ってみる"
                 }
             ],
             "title": "筑波大学自販機Map",
             "description": "筑波大学構内の自動販売機を探すことができるサイトです。データはすべてOpenStreetMap由来です。",
             "tag": ["sveltekit", "openstreetmap", "overpassapi"]
+        },
+        {
+            "id": "scrapbox-planetarium",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/scrapbox-planetarium",
+                    "text": "GitHub"
+                },
+                {
+                    "href": "https://eniehack.github.io/scrapbox-planetarium",
+                    "text": "使ってみる"
+                }
+            ],
+            "title": "scrapbox-planetarium",
+            "description": "scrapboxのリンク構造をプラネタリウムのように可視化するプログラムです",
+            "tag": ["sveltekit", "scrapbox"]
+        },
+        {
+            "id": "monoxa",
+            "links": [
+                {
+                    "href": "https://www.eniehack.net/~eniehack/monoxa",
+                    "text": "プロジェクトページ"
+                }
+            ],
+            "title": "monoxa（モノグサ）",
+            "description": "文字を書くのではなく話すことによって日記を付けられるサービスです",
+            "tag": ["sveltekit", "golang", "firebase"]
+        },
+        {
+            "id": "planet-eniehack",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/planet-someone",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "planet eniehack",
+            "description": "日々の活動などを記録し、1つのWebページにまとめることができるソフトウェアです",
+            "tag": ["golang"]
         }
     ],
     "slides": [
