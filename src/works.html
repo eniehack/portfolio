@@ -10,7 +10,6 @@
         <h1>制作物</h1>
         <section id="programs">
             <h1>ソフトウェア</h1>
-            <ul>
             {% for item in works.software %}
             <section id="work_{{item.id}}">
                 <h1>{{item.title}}</h1>
@@ -25,7 +24,7 @@
                 {% endfor %}
             </section>
             {% endfor %}
-            </ul>
+            <p>その他、ここに掲載していないものが<a href="https://github.com/eniehack?tab=repositories">GitHub</a>にもあります</p>
         </section>
         <section id="slides">
             <h1>スライド</h1>
