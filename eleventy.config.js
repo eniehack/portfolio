@@ -8,8 +8,7 @@ export default function (config) {
         baseHref: process.env.NODE_ENV === "production" ? "https://www.eniehack.net/~eniehack" : "http://localhost:8080",
     })
     config.addPassthroughCopy("assets");
-    config.addShortcode("date", function () {
-      const date = new Date();
+    config.addFilter("toISO8601", function (date) {
       const month = date.getMonth() + 1;
       const day = date.getDate();
       return `${date.getFullYear()}-${month.toString().length !== 2 ? "0"+month.toString() : month.toString() }-${day.toString().length !== 2 ? "0"+day.toString() : day.toString() }`
