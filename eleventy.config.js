@@ -1,8 +1,8 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const pluginWebc = require("@11ty/eleventy-plugin-webc");
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
-module.exports = function (config) {
+export default function (config) {
     config.addPlugin(pluginWebc)
     config.addPlugin(EleventyHtmlBasePlugin, {
         baseHref: process.env.NODE_ENV === "production" ? "https://www.eniehack.net/~eniehack" : "http://localhost:8080",
