@@ -1,5 +1,4 @@
 ---
-title: "{{recipe.title}}"
 pagination:
   data: recipes
   size: 1
@@ -7,6 +6,7 @@ pagination:
 permalink: "recipes/{{recipe.id | slugify}}/"
 date: Last Modified
 ---
+{% set title = recipe.title %}
 {% extends "layouts/base.njk" %}
 
 {% block head %}
