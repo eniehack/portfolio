@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "DEBUG=Eleventy* eleventy --watch --serve",
-    "build": "rm -rf _site && NODE_ENV=production eleventy"
+    "build": "rm -rf _site && NODE_ENV=production eleventy",
+    "preview": "NODE_ENV=production eleventy --serve"
   },
   "private": true,
   "license": "UNLICENSED",
