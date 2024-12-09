@@ -17,7 +17,7 @@ sitemap:
     <ul>
         {% for recipe in pagination.items %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ ['/recipes/', recipe.id] | join | htmlBaseUrl }}" itemprop="item">
+          <a href="{{ ['/recipes/', recipe.id, '/'] | join | htmlBaseUrl }}" itemprop="item">
             <span itemprop="name">{{recipe.title}}</span>
           </a>
         </li>
