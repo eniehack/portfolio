@@ -9,25 +9,29 @@ date: Last Modified
 <article>
     <section>
         <h1>相互リンク</h1>
+        <ul>
         {% for item in mutuallinks %}
-        <section>
-            <h1>{{item.name}}</h1>
-            {% if item.description %}
-            <p>{{item.description}}</p>
-            {% endif %}
-            {% if item.banner.src %}
-            <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
-                {% if item.banner.width and item.banner.height %}
-                <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
-                {% else %}
-                <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+        <li>
+            <section>
+                <h2 style="font-weight: normal; font-size: medium;">
+                    <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">{{item.name}}さん</a>
+                </h2>
+                {% if item.description %}
+                <p>{{item.description}}</p>
                 {% endif %}
-            </a>
-            {% else %}
-            <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">{{item.name}}さんのサイト</a>
-            {% endif %}
-        </section>
+                {% if item.banner.src %}
+                <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
+                    {% if item.banner.width and item.banner.height %}
+                    <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                    {% else %}
+                    <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                    {% endif %}
+                </a>
+                {% endif %}
+            </section>
+        </li>
         {% endfor %}
+        </section>
     </section>
     <section id="how-to-join">
         <h1>参加するには</h1>
