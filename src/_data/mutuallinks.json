@@ -62,5 +62,13 @@
             "src": "https://yuinoid.neocities.org/img/banner2.gif"
         },
         "description": "勝手にリンクさせてもらいました。分散型SNS年表の記述量に圧倒されます。"
+    },
+    {
+        "name": "yude",
+        "url": "https://yude.jp/",
+        "rel": ["contact"],
+        "banner": {
+            "src": "https://www.yude.jp/banner_new.png"
+        }
     }
 ]
