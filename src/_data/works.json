@@ -55,6 +55,26 @@
             "title": "planet eniehack",
             "description": "日々の活動などを記録し、1つのWebページにまとめることができるソフトウェアです",
             "tag": ["golang"]
+        },
+        {
+            "id": "tokyodome-scaler",
+            "links": [
+                {
+                    "href": "https://tokyodome-scaler.pages.dev/",
+                    "text": "触ってみる"
+                },
+                {
+                    "href": "https://github.com/eniehack/tokyodome-scaler",
+                    "text": "GitHub"
+                },
+                {
+                    "href": "https://zenn.dev/eniehack/articles/d13c33d046efc6",
+                    "text": "実装についてまとめた記事"
+                }
+            ],
+            "title": "tokyodome-scaler",
+            "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
+            "tag": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
         }
     ],
     "slides": [
