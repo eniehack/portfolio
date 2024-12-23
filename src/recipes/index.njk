@@ -10,6 +10,12 @@ sitemap:
 
 {% extends "layouts/base.njk" %}
 
+{% block breadcrumb %}
+  {% renderTemplate "webc" %}
+    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "レシピ"}]'></breadcrumb-list>
+  {% endrenderTemplate %}
+{% endblock %}
+
 {% block main %}
 <article itemscope itemtype="https://schema.org/ItemList">
     <h1 itemprop="name">レシピ</h1>

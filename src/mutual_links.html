@@ -5,6 +5,12 @@ date: Last Modified
 
 {% extends "layouts/base.njk" %}
 
+{% block breadcrumb %}
+  {% renderTemplate "webc" %}
+    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "相互リンク"}]'></breadcrumb-list>
+  {% endrenderTemplate %}
+{% endblock %}
+
 {% block main %}
 <article>
     <section>

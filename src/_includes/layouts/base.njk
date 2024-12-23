@@ -8,11 +8,18 @@
     <link rel="icon" href="{{ "/assets/favicon.ico" | htmlBaseUrl }}" />
     <title>{{ title }} - なかやばしのページ</title>
     {% include "../ogp.njk" %}
+    <link rel="stylesheet" href="{% getBundleFileUrl "css" %}" />
     {% block head %}
     {% endblock %}
 </head>
 <body>
-    {% include "header.njk" %}
+    <header>
+        {% block breadcrumb %}
+            <a rel="nofollow" href="{{ "/" | htmlBaseUrl}}">トップへ</a>
+            <a rel="nofollow" href="{{ ".." | htmlBaseUrl}}">親階層へ</a>
+        {% endblock %}
+    </header>
+    <hr />
     <main>
         {% block main %}
         {% endblock %}

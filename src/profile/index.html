@@ -30,6 +30,12 @@ section h1 {
 {% endblock %}
 
 
+{% block breadcrumb %}
+  {% renderTemplate "webc" %}
+    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "プロフィール"}]'></breadcrumb-list>
+  {% endrenderTemplate %}
+{% endblock %}
+
 {% block main %}
 <article>
     <section class="h-card h-resume">

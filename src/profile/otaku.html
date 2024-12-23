@@ -32,6 +32,11 @@ section h1 {
 </style>
 {% endblock %}
 
+{% block breadcrumb %}
+  {% renderTemplate "webc" %}
+    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: "..", text: "プロフィール"}, {href: ".", text: "オタク用プロフィール"}]'></breadcrumb-list>
+  {% endrenderTemplate %}
+{% endblock %}
 
 {% block main %}
 <article>

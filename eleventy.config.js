@@ -1,13 +1,17 @@
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
-    config.addPlugin(pluginWebc)
     config.addPlugin(EleventyHtmlBasePlugin, {
         baseHref: process.env.NODE_ENV === "production" ? "https://www.eniehack.net/~eniehack" : "http://localhost:8080",
     })
     config.addPassthroughCopy("assets");
+    config.addPlugin(EleventyRenderPlugin);
+    config.addBundle("css");
+    config.addPlugin(pluginWebc, {
+       components: "src/_includes/**/*.webc",
+    })
     config.addFilter("toISO8601", function (date) {
       const month = date.getMonth() + 1;
       const day = date.getDate();

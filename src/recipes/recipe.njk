@@ -26,6 +26,12 @@ date: Last Modified
 </style>
 {% endblock %}
 
+{% block breadcrumb %}
+  {% renderTemplate "webc", {title: recipe.title} %}
+    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: "..", text: "レシピ"}, {href: ".", text: title}]'></breadcrumb-list>
+  {% endrenderTemplate %}
+{% endblock %}
+
 {% block main %}
     <article class="h-recipe" itemscope itemtype="https://schema.org/Recipe">
         <h1 class="p-name" itemprop="name">{{recipe.title}}</h1>
