@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block breadcrumb %}
-  {% renderTemplate "webc", {title: recipe.title} %}
+  {% renderTemplate "webc", {title: title} %}
     <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: "..", text: "レシピ"}, {href: ".", text: title}]'></breadcrumb-list>
   {% endrenderTemplate %}
 {% endblock %}
