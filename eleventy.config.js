@@ -1,5 +1,7 @@
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
+import { Recipe } from '@cooklang/cooklang-ts';
+import fs from "node:fs"
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -17,6 +19,40 @@ export default function (config) {
       const day = date.getDate();
       return `${date.getFullYear()}-${month.toString().length !== 2 ? "0"+month.toString() : month.toString() }-${day.toString().length !== 2 ? "0"+day.toString() : day.toString() }`
     });
+    config.addTemplateFormats("cook");
+    config.addExtension("cook", {
+        getData: async (inputPath) => {
+            const content = fs.readFileSync(inputPath, 'utf-8').split('---')[2]
+            // get the recipe object
+            const recipe = new Recipe(content, {defaultIngredientAmount: "適量"})
+            console.log(content)
+            console.log(recipe)
+            return {
+                ingredients: recipe.ingredients,
+                metadata: recipe.metadata,
+                // for each step, add spans and classes
+                // to ingredients, timers, and cookware
+                steps: recipe.steps.map(step => {
+                    return step.map(s => {
+                        if (s.type === 'text') {
+                            return s.value
+                        } else if (s.type === 'ingredient') {
+                            return `<span class="cl-ingredient">${s.name.toLowerCase()}</span>`
+                        } else if (s.type === 'timer') {
+                            return `<span class="cl-timer">${s.quantity} ${s.units}</span>`
+                        } else if (s.type === 'cookware') {
+                            return `<span class="cl-cookware">${s.name.toLowerCase()}</span>`
+                        }
+                    }).join('')
+                }),
+            }
+		},
+		compile: async (inputContent) => {
+			return async () => {
+				return inputContent
+			};
+		},
+    })
 
     return {
         dir: {

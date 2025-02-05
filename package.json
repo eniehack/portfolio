@@ -13,6 +13,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
-    "@11ty/webc": "^0.11.4"
+    "@11ty/webc": "^0.11.4",
+    "@cooklang/cooklang-ts": "^1.2.7"
   }
 }

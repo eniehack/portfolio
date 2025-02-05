@@ -17,6 +17,9 @@ importers:
       '@11ty/webc':
         specifier: ^0.11.4
         version: 0.11.4
+      '@cooklang/cooklang-ts':
+        specifier: ^1.2.7
+        version: 1.2.7
 
 packages:
 
@@ -66,6 +69,9 @@ packages:
   '@11ty/webc@0.11.4':
     resolution: {integrity: sha512-q1GMcjNnx9PxUr6jyTT5CdDFma3JWkT5D45wRNYUQ/B4cxTTxpC15b2rYdzNaGuSqB6tsArQ9Qh4BPqg6Xo9cA==}
     engines: {node: '>=14.18'}
+
+  '@cooklang/cooklang-ts@1.2.7':
+    resolution: {integrity: sha512-eVjyZ7HUbboP4y76L+OvsoEvY+oncIAqLr4vbXG5c0DuZEroRz1q+7JxYX8EEoa1ZKbIk5We0CHkUH6N49JMLw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -957,6 +963,8 @@ snapshots:
       nanoid: 4.0.2
       node-retrieve-globals: 2.0.8
       parse5: 7.1.2
+
+  '@cooklang/cooklang-ts@1.2.7': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
