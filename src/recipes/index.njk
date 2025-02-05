@@ -1,7 +1,7 @@
 ---
 title: レシピの一覧
 pagination:
-  data: recipes
+  data: collections.recipes
   size: 10
 date: Last Modified
 sitemap:
@@ -23,8 +23,8 @@ sitemap:
     <ul>
         {% for recipe in pagination.items %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="{{ ['/recipes/', recipe.id, '/'] | join | htmlBaseUrl }}" itemprop="item">
-            <span itemprop="name">{{recipe.title}}</span>
+          <a href="{{ recipe.page.url | htmlBaseUrl }}" itemprop="item">
+            <span itemprop="name">{{recipe.data.title}}</span>
           </a>
         </li>
         {% endfor %}
