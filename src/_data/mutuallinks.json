@@ -51,7 +51,7 @@
     },
     {
         "name": "ウルトラぶんぶく",
-        "url": "https://ultrabumbuku.dev/mutual-links",
+        "url": "https://ultrabumbuku.dev/Mutual-links",
         "rel": ["acquaintance", "met"]
     },
     {
@@ -69,6 +69,24 @@
         "rel": ["contact"],
         "banner": {
             "src": "https://www.yude.jp/banner_new.png"
+        }
+    },
+    {
+        "name": "ちゅるり",
+        "url": "https://itsu.dev/",
+        "rel": ["contact", "met"],
+        "banner": {
+            "src": "/assets/img/chururi-banner.svg",
+            "width": 200,
+            "height": 40
+        }
+    },
+    {
+        "name": "いなにわうどん",
+        "url": "https://いなにわうどん.みんな/",
+        "rel": ["contact", "met"],
+        "banner": {
+            "src": "/assets/img/inaniwaudon-banner.png",
         }
     }
 ]
