@@ -64,12 +64,13 @@ section h1 {
             <h1>趣味</h1>
             <ul>
                 <li>街歩き、知らない道を歩くこと</li>
+                <li>旅行</li>
                 <li>考えること</li>
                 <li>読書</li>
                 <li>音楽を聞くこと</li>
             </ul>
         </section>
-        <section>
+        <!--<section>
             <h1>好きな言葉</h1>
             <div>
                 <backquote>
@@ -77,6 +78,21 @@ section h1 {
                     <footer><cite>創世記 2章18節</cite>より抜粋</footer>
                 </backquote>
             </div>
+        </section>-->
+        <section id="music">
+            <h1>好きなミュージシャン・曲</h1>
+            <ul>
+                {% for item in profile.music %}
+                <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+            <p>
+                <a href="https://listenbrainz.org/user/eniehack/taste/">listenbrainz</a>を見てもわかるかなと
+            </p>
+        </section>
+        <section id="works">
+            <h1>制作物</h1>
+            <p><a href="{{"/works" | htmlBaseUrl }}">制作物</a>を参照のこと。</p>
         </section>
         <section id="links">
             <h1>リンク</h1>
