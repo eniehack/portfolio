@@ -26,13 +26,18 @@ date: Last Modified
                 <p>{{item.description}}</p>
                 {% endif %}
                 {% if item.banner.src %}
-                <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
-                    {% if item.banner.width and item.banner.height %}
-                    <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                    {% if item.banner.src.charAt(1) === '/' %}
+                        {% set banner = item.banner.src | htmlBaseUrl %}
                     {% else %}
-                    <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                        {% set banner = item.banner.src %}
                     {% endif %}
-                </a>
+                    <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
+                        {% if item.banner.width and item.banner.height %}
+                        <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                        {% else %}
+                        <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                        {% endif %}
+                    </a>
                 {% endif %}
             </section>
         </li>
