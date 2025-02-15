@@ -86,7 +86,7 @@
         "url": "https://いなにわうどん.みんな/",
         "rel": ["contact", "met"],
         "banner": {
-            "src": "/assets/img/inaniwaudon-banner.png",
+            "src": "/assets/img/inaniwaudon-banner.png"
         }
     }
 ]
