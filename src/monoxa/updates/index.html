@@ -1,0 +1,29 @@
+---
+date: Last Modified
+---
+{% extends "monoxa/base.njk" %}
+
+{% block title %}
+monoxa/最新情報
+{% endblock %}
+
+{% block head %}
+<link rel="alternate" content="{{"./feed.xml" | htmlBaseUrl }}" type="application/atom+xml">
+{% endblock %}
+
+{% block main %}
+<article>
+    <section>
+        <h1>最新情報</h1>
+        <div>
+            <a href="{{ "./feed.xml" | htmlBaseUrl}}" rel="alternate" type="application/atom+xml">RSSで購読する</a>
+            {% for item in monoxa.updates | sortUpdates | reverseUpdates %}
+            <section id="{{item.id}}">
+                <h2>{{item.date}}</h2>
+                <p>{{item.content}}</p>
+            </section>
+            {% endfor %}
+        </div>
+    </section>
+</article>
+{% endblock %}

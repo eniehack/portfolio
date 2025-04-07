@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="generator" content="{{ eleventy.generator }}"/>
+    <meta charset="UTF-8" />
+    <title>{%block title%}{% endblock %} - なかやばしのページ</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <main>
+    {% block main %}
+    {% endblock %}
+    </main>
+    {% include "monoxa/footer.njk" %}
+</body>
+</html>

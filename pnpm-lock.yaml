@@ -11,6 +11,9 @@ importers:
       '@11ty/eleventy':
         specifier: ^3.0.0
         version: 3.0.0
+      '@11ty/eleventy-plugin-rss':
+        specifier: ^2.0.3
+        version: 2.0.3
       '@11ty/eleventy-plugin-webc':
         specifier: ^0.11.2
         version: 0.11.2
@@ -42,6 +45,9 @@ packages:
     resolution: {integrity: sha512-JSnqehT+sWSPi6e44jTXUW+KiV9284YF9fzPQvfGB4cXlk/m/SJk17CavHCleIvKXDN+jrUw9TZkwAwr85ONWQ==}
     engines: {node: '>=18'}
 
+  '@11ty/eleventy-plugin-rss@2.0.3':
+    resolution: {integrity: sha512-ubK97uahCLpKhORLfblgxLcoaNqTcKde1cH8CeRKNTFoUuuDSEjWZtodV9fKrg+uOp5X74dO43z1/io6hhs5Bw==}
+
   '@11ty/eleventy-plugin-webc@0.11.2':
     resolution: {integrity: sha512-oa/XlAqI5KtVO7M14qaN92D2yJfBEMMSb66YWY6YZVbRqFSVbjO4WmRJ2Ti2ZZb1FNvxj4ypGNV8VJleGE69xw==}
     engines: {node: '>=14.18'}
@@ -49,6 +55,10 @@ packages:
   '@11ty/eleventy-utils@1.0.3':
     resolution: {integrity: sha512-nULO91om7vQw4Y/UBjM8i7nJ1xl+/nyK4rImZ41lFxiY2d+XUz7ChAj1CDYFjrLZeu0utAYJTZ45LlcHTkUG4g==}
     engines: {node: '>=12'}
+
+  '@11ty/eleventy-utils@2.0.1':
+    resolution: {integrity: sha512-hicG0vPyqfLvgHJQLtoh3XAj6wUbLX4yY2se8bQLdhCIcxK46mt4zDpgcrYVP3Sjx4HPifQOdwRfOEECoUcyXQ==}
+    engines: {node: '>=18'}
 
   '@11ty/eleventy@3.0.0':
     resolution: {integrity: sha512-0P0ZsJXVW2QiNdhd7z+GYy6n+ivh0enx1DRdua5ta6NlzY2AhbkeWBY6U+FKA8lPS3H4+XsTpfLLfIScpPZLaQ==}
@@ -61,6 +71,10 @@ packages:
 
   '@11ty/posthtml-urls@1.0.0':
     resolution: {integrity: sha512-CcsRdI933x613u7CjM+QGs7iD/m8SaDup3Apohg1+7dybigrEUHc2jGS3mcMgQKvF2+IphqmepD/FrKLlPkPEg==}
+    engines: {node: '>= 6'}
+
+  '@11ty/posthtml-urls@1.0.1':
+    resolution: {integrity: sha512-6EFN/yYSxC/OzYXpq4gXDyDMlX/W+2MgCvvoxf11X1z76bqkqFJ8eep5RiBWfGT5j0323a1pwpelcJJdR46MCw==}
     engines: {node: '>= 6'}
 
   '@11ty/recursive-copy@3.0.0':
@@ -231,6 +245,15 @@ packages:
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.4.0:
+    resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -874,6 +897,15 @@ snapshots:
       - posthtml
       - supports-color
 
+  '@11ty/eleventy-plugin-rss@2.0.3':
+    dependencies:
+      '@11ty/eleventy-utils': 2.0.1
+      '@11ty/posthtml-urls': 1.0.1
+      debug: 4.4.0
+      posthtml: 0.16.6
+    transitivePeerDependencies:
+      - supports-color
+
   '@11ty/eleventy-plugin-webc@0.11.2':
     dependencies:
       '@11ty/eleventy-plugin-bundle': 1.0.5
@@ -884,6 +916,8 @@ snapshots:
   '@11ty/eleventy-utils@1.0.3':
     dependencies:
       normalize-path: 3.0.0
+
+  '@11ty/eleventy-utils@2.0.1': {}
 
   '@11ty/eleventy@3.0.0':
     dependencies:
@@ -938,6 +972,13 @@ snapshots:
       http-equiv-refresh: 2.0.1
       list-to-array: 1.1.0
       object.entries: 1.1.8
+      parse-srcset: 1.0.2
+
+  '@11ty/posthtml-urls@1.0.1':
+    dependencies:
+      evaluate-value: 2.0.0
+      http-equiv-refresh: 2.0.1
+      list-to-array: 1.1.0
       parse-srcset: 1.0.2
 
   '@11ty/recursive-copy@3.0.0':
@@ -1120,6 +1161,10 @@ snapshots:
       ms: 2.0.0
 
   debug@4.3.7:
+    dependencies:
+      ms: 2.1.3
+
+  debug@4.4.0:
     dependencies:
       ms: 2.1.3
 

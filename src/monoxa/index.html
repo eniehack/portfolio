@@ -1,0 +1,44 @@
+---
+date: Last Modified
+---
+{% extends "monoxa/base.njk" %}
+
+{% block title %}
+monoxa/index
+{% endblock %}
+
+{% block main %}
+<article>
+    <h1>monoxa</h1>
+    <section id="about">
+        <h1>monoxaとは</h1>
+        <p>
+            monoxaは2023年度のSecHack365をきっかけに制作されているソフトウェアまたはWebサービスです。
+            monoxaは自分のタイピングでさえも面倒に感じるその怠惰な性格を出発点として、タイピングをせずともデジタル空間上に日記を付けられるサービスです。
+            monoxaは制作中であり、まだ実際には利用できません。
+        </p>
+    </section>
+    <section id="updates">
+        <h1>お知らせ</h1>
+        <div>
+            <a href="{{ "./updates/feed.xml" | htmlBaseUrl}}" rel="alternate" type="application/atom+xml">RSSで購読する</a>
+            {%- for item in monoxa.updates|list|sort(true, false, "updated") %}
+                {% if loop.index <= 5 %}
+                <section id="{{item.id}}">
+                    <h2>{{item.date}}</h2>
+                    <p>{{item.content}}</p>
+                </section>
+                {%- endif %}
+            {%- endfor %}
+        </div>
+        <li><a href="{{"/updates" | htmlBaseUrl }}">過去のおしらせを見る</a></li>
+    </section>
+    <section id="links">
+        <h1>各種リンク</h1>
+        <ul>
+            <li><a href="https://github.com/eniehack/monoxa-web">フロントエンドのソースコード</a></li>
+            <li><a href="https://github.com/eniehack/monoxa-server">サーバのソースコード</a></li>
+        </ul>
+    </section>
+</article>
+{% endblock %}

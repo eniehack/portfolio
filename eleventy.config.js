@@ -1,7 +1,8 @@
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 import { Recipe } from '@cooklang/cooklang-ts';
-import fs from "node:fs"
+import {filter as monoxaFilter, shortCode as monoxaShortCode} from "./src/_scripts/monoxa.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -14,6 +15,15 @@ export default function (config) {
     config.addPlugin(pluginWebc, {
        components: "src/_includes/**/*.webc",
     })
+    config.addPlugin(pluginRss);
+
+    config.addFilter("newDate", monoxaFilter.newDate);
+    config.addFilter("sortUpdates", monoxaFilter.sortUpdates);
+    config.addFilter("reverseUpdates", monoxaFilter.reverseUpdates);
+    config.addShortcode("now", monoxaShortCode.now);
+    config.addShortcode("date", monoxaShortCode.date);
+
+    config.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
     config.addFilter("toISO8601", function (date) {
       const month = date.getMonth() + 1;
       const day = date.getDate();

@@ -1,0 +1,39 @@
+---json
+{
+    "permalink": "/monoxa/updates/feed.xml",
+    "eleventyExcludeFromCollections": true,
+	"date": "last Modified",
+    "metadata": {
+      "title": "monoxaリリース情報",
+      "subtitle": "monoxaのリリース情報などを配信します",
+      "language": "ja",
+      "url": "/monoxa/updates",
+      "author": {
+        "name": "なかやばし"
+      }
+    }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url | htmlBaseUrl }}">
+	<title>{{ metadata.title }}</title>
+	<subtitle>{{ metadata.subtitle }}</subtitle>
+	<link href="{{ permalink | htmlBaseUrl }}" rel="self" />
+	<link href="{{ metadata.url | htmlBaseUrl }}" rel="alternate" type="text/html" />
+	<updated>{{ page.date | dateToRfc3339 }}</updated>
+	<id>{{ metadata.url | htmlBaseUrl }}</id>
+	<author>
+		<name>{{ metadata.author.name }}</name>
+	</author>
+	{%- for post in monoxa.updates %}
+	<entry>
+		<title>{{ post.date }}</title>
+		<link href="{{ "/updated" | htmlBaseUrl }}" />
+		<updated>{{ post.updated | newDate | dateToRfc3339 }}</updated>
+		<id>{{ post.id }}</id>
+		<content xml:lang="{{ metadata.language }}" type="html">
+        {{ post.content }}
+    </content>
+	</entry>
+	{%- endfor %}
+</feed>
