@@ -1,8 +1,8 @@
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import { Recipe } from '@cooklang/cooklang-ts';
 import {filter as monoxaFilter, shortCode as monoxaShortCode} from "./src/_scripts/monoxa.js";
+import {extension as cookExtension} from "./src/_scripts/cooklang.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -29,36 +29,10 @@ export default function (config) {
       const day = date.getDate();
       return `${date.getFullYear()}-${month.toString().length !== 2 ? "0"+month.toString() : month.toString() }-${day.toString().length !== 2 ? "0"+day.toString() : day.toString() }`
     });
+
     // from https://rknight.me/blog/adding-cooklang-support-to-eleventy-two-ways/
     config.addTemplateFormats("cook");
-    config.addExtension("cook", {
-        getData: async (inputPath) => {
-            const content = fs.readFileSync(inputPath, 'utf-8').split('---')[2]
-            const recipe = new Recipe(content, {defaultIngredientAmount: "適量"})
-            return {
-                ingredients: recipe.ingredients,
-                metadata: recipe.metadata,
-                steps: recipe.steps.map(step => {
-                    return step.map(s => {
-                        if (s.type === 'text') {
-                            return s.value
-                        } else if (s.type === 'ingredient') {
-                            return `<span class="cl-ingredient">${s.name.toLowerCase()}</span>`
-                        } else if (s.type === 'timer') {
-                            return `<span class="cl-timer">${s.quantity} ${s.units}</span>`
-                        } else if (s.type === 'cookware') {
-                            return `<span class="cl-cookware">${s.name.toLowerCase()}</span>`
-                        }
-                    }).join('')
-                }),
-            }
-		},
-		compile: async (inputContent) => {
-			return async () => {
-				return inputContent
-			};
-		},
-    })
+    config.addExtension("cook", cookExtension)
 
     return {
         dir: {
