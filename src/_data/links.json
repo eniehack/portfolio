@@ -15,6 +15,11 @@
       "text": "レシピ"
     },
     {
+      "href": "/diary",
+      "text": "日記",
+      "internal_link": true
+    },
+    {
       "href": "/planet/",
       "internal_link": true,
       "text": "planet eniehack"
