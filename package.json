@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "DEBUG=Eleventy* eleventy --watch --serve",
+    "dev": "DEBUG=Eleventy* eleventy --watch --serve --incremental",
     "build": "rm -rf _site && NODE_ENV=production eleventy",
     "preview": "NODE_ENV=production eleventy --serve"
   },
