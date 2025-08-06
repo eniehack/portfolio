@@ -3,53 +3,77 @@ title: 相互リンク
 date: Last Modified
 ---
 
-{% extends "layouts/base.njk" %}
+{% extends "layouts/tailwind.njk" %}
 
-{% block breadcrumb %}
-  {% renderTemplate "webc" %}
-    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "相互リンク"}]'></breadcrumb-list>
-  {% endrenderTemplate %}
+{% block header %}
+    <div class="mt-[21px] pt-10">
+    {% renderTemplate "webc" %}
+        <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "相互リンク"}]'></breadcrumb-list>
+    {% endrenderTemplate %}
+    </div>
 {% endblock %}
 
 {% block main %}
 <article>
     <section>
-        <h1>相互リンク</h1>
-        <ul>
-        {% for item in mutuallinks %}
-        <li>
-            <section>
-                <h2 style="font-weight: normal; font-size: medium;">
-                    <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">{{item.name}}さん</a>
-                </h2>
-                {% if item.description %}
-                <p>{{item.description}}</p>
+        <h1 class="text-4xl font-black mb-[21px] pb-10">相互リンク</h1>
+        <div class="flex flex-wrap gap-4">
+        {% for item in mutuallinks | sort(false, false, "type") %}
+            {% if item.banner.src %}
+                {% if item.banner.src.charAt(1) === '/' %}
+                    {% set banner = item.banner.src | htmlBaseUrl %}
+                {% else %}
+                    {% set banner = item.banner.src %}
                 {% endif %}
-                {% if item.banner.src %}
-                    {% if item.banner.src.charAt(1) === '/' %}
-                        {% set banner = item.banner.src | htmlBaseUrl %}
-                    {% else %}
-                        {% set banner = item.banner.src %}
-                    {% endif %}
-                    <a href="{{item.url}}" rel="{{ item.rel | join(" ") }} noopener">
-                        {% if item.banner.width and item.banner.height %}
+                {% if item.banner.width and item.banner.height %}
+                <div class="mutual_link">
+                    <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                         <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
-                        {% else %}
-                        <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
-                        {% endif %}
                     </a>
+                </div>
+                {% else %}
+                <div class="mutual_link">
+                    <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                        <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                    </a>
+                </div>
                 {% endif %}
-            </section>
-        </li>
+            {% elif item.avatar %}
+            <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 border border-transparent rounded-md p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                <div class="flex flex-cols gap-2">
+                    <img class="size-8" src="{{ item.avatar }}" />
+                    <span>{{item.name}}</span>
+                </div>
+            </a>
+            {% else %}
+            <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 rounded-md border border-transparent p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                <div class="flex flex-cols gap-2">
+                    <div class="size-8 text-neutral-700">
+                        <!-- svg from bootstrap icon (https://icons.getbootstrap.com/icons/person-square/) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                        </svg>
+                    </div>
+                    <span>{{item.name}}</span>
+                </div>
+            </a>
+            {% endif %}
         {% endfor %}
+        </div>
         </section>
     </section>
     <section id="how-to-join">
-        <h1>参加するには</h1>
+        <h1 class="subtitle">参加するには</h1>
         <p><a href="{{ "/profile/#links" | htmlBaseUrl }}">プロフィールページ中の「リンク」</a>から、リンクしてほしいURLと名前を送ってください。</p>
     </section>
 </article>
-<aside>
+<aside class="mt-8">
+    <p>アイコンは<a href="https://icons.getbootstrap.com/icons/person-square/">Bootstrap Icon</a>から拝借しました</p>
     <a href="http://gmpg.org/xfn"><img src="https://gmpg.org/xfn/xfn-btn.gif" alt="XFN Friendly" /></a>
 </aside>
+{% endblock %}
+    
+{% block footer %}
+    {% include "footer.njk" %}
 {% endblock %}
