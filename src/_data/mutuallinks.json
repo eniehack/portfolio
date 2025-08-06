@@ -1,25 +1,31 @@
 [
     {
+        "type": "avatar",
         "name": "Azumabashi",
         "url": "https://azumabashi.dev/links.gmi",
         "rel": ["friend", "met"]
     },
     {
+        "type": "avatar",
         "name": "public_yusuke",
         "url": "https://www.yusuke.pub",
         "rel": ["friend", "met"]
     },
     {
+        "type": "avatar",
         "name": "Ekasilicon",
         "url": "https://www.eka.earth/links",
         "rel": ["friend", "met", "co-worker", "colleague"]
     },
     {
+        "type": "avatar",
         "name": "汽水創",
         "url": "https://kisuisou.github.io/mypage/",
-        "rel": ["friend", "met"]
+        "rel": ["friend", "met"],
+        "avatar": "https://www.kisuiiki.net/avatar.jpg"
     },
     {
+        "type": "banner",
         "name": "らいらい",
         "url": "https://lai-lai.info/Links/",
         "rel": ["acquaintance", "met"],
@@ -30,48 +36,51 @@
         }
     },
     {
+        "type": "avatar",
         "name": "raspi0124",
         "url": "https://raspi0124.dev/links",
-        "rel": ["friend", "met"]
+        "rel": ["friend", "met"],
+        "avatar": ""
     },
     {
+        "type": "avatar",
         "name": "Shingo Hattori",
         "url": "https://llhi.org/",
         "rel": ["friend", "met"]
     },
     {
+        "type": "banner",
         "name": "ぱうろ",
         "url": "https://210o.net/contact",
-        "rel": ["acquaintance", "met"]
+        "rel": ["acquaintance", "met"],
+        "banner": {
+            "src": "/assets/img/210on_banner.png"
+        }
     },
     {
+        "type": "avatar",
         "name": "鶏南蛮そば",
         "url": "https://sobatorinanban.github.io/about/",
         "rel": ["friend", "met"]
     },
     {
+        "type": "avatar",
         "name": "ウルトラぶんぶく",
         "url": "https://ultrabumbuku.dev/Mutual-links",
         "rel": ["acquaintance", "met"]
     },
     {
+        "type": "banner",
         "name": "yuinoid",
         "url": "https://yuinoid.neocities.org/",
         "rel": ["contact"],
         "banner": {
-            "src": "https://yuinoid.neocities.org/img/banner2.gif"
+            "src": "/assets/img/yuinoid_banner.gif"
         },
         "description": "勝手にリンクさせてもらいました。分散型SNS年表の記述量に圧倒されます。"
     },
     {
-        "name": "yude",
-        "url": "https://yude.jp/",
-        "rel": ["contact"],
-        "banner": {
-            "src": "https://www.yude.jp/banner_new.png"
-        }
-    },
-    {
+        "type": "banner",
         "name": "ちゅるり",
         "url": "https://itsu.dev/",
         "rel": ["contact", "met"],
@@ -82,11 +91,14 @@
         }
     },
     {
+        "type": "banner",
         "name": "いなにわうどん",
         "url": "https://いなにわうどん.みんな/",
         "rel": ["contact", "met"],
         "banner": {
-            "src": "/assets/img/inaniwaudon-banner.png"
+            "src": "/assets/img/inaniwaudon-banner.png",
+            "height": 80,
+            "width": 389
         }
     }
 ]
