@@ -25,13 +25,15 @@
 {% endblock %}
 
 {% block main %}
-    <article class="h-recipe" itemscope itemtype="https://schema.org/Recipe">
+    <article class="h-recipe prose" itemscope itemtype="https://schema.org/Recipe">
         <h1 class="p-name title" itemprop="name">{{metadata.title}}</h1>
+        {% if metadata.tags %}
         <ul class="categories">
             {%- for tag in metadata.tags %}
             <li class="p-category">{{tag}}</li>
             {%- endfor -%}
         </ul>
+        {% endif %}
         <p class="p-summary" itemprop="description">
             {{metadata.note}}
         </p>

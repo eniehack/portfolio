@@ -14,10 +14,10 @@ date: Last Modified
 {% endblock %}
 
 {% block main %}
-<article>
+<article class="prose max-w-[inherit]">
     <section>
         <h1 class="text-4xl font-black mb-[21px] pb-10">相互リンク</h1>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-2">
         {% for item in mutuallinks | sort(false, false, "type") %}
             {% if item.banner.src %}
                 {% if item.banner.src.charAt(1) === '/' %}
@@ -28,27 +28,27 @@ date: Last Modified
                 {% if item.banner.width and item.banner.height %}
                 <div class="mutual_link">
                     <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
-                        <img src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                        <img class="not-prose" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
                 {% else %}
                 <div class="mutual_link">
                     <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
-                        <img src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                        <img class="not-prose" src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
                 {% endif %}
             {% elif item.avatar %}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 border border-transparent rounded-md p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                 <div class="flex flex-cols gap-2">
-                    <img class="size-8" src="{{ item.avatar }}" />
+                    <img class="size-8 not-prose" src="{{ item.avatar }}" />
                     <span>{{item.name}}</span>
                 </div>
             </a>
             {% else %}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 rounded-md border border-transparent p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                 <div class="flex flex-cols gap-2">
-                    <div class="size-8 text-neutral-700">
+                    <div class="size-8 text-neutral-700 not-prose">
                         <!-- svg from bootstrap icon (https://icons.getbootstrap.com/icons/person-square/) -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
                           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -65,10 +65,10 @@ date: Last Modified
     </section>
     <section id="how-to-join">
         <h1 class="subtitle">参加するには</h1>
-        <p><a href="{{ "/profile/#links" | htmlBaseUrl }}">プロフィールページ中の「リンク」</a>から、リンクしてほしいURLと名前を送ってください。</p>
+        <p><a href="{{ "/profile/#links" | htmlBaseUrl }}">プロフィールページ中の「リンク」</a>から、適当な連絡先を選び、リンクしてほしいURLと名前を送ってください。もしあれば、アイコンやバナーのURLも添えていただければ、名前と共に掲載します。</p>
     </section>
 </article>
-<aside class="mt-8">
+<aside class="prose mt-8">
     <p>アイコンは<a href="https://icons.getbootstrap.com/icons/person-square/">Bootstrap Icon</a>から拝借しました</p>
     <a href="http://gmpg.org/xfn"><img src="https://gmpg.org/xfn/xfn-btn.gif" alt="XFN Friendly" /></a>
 </aside>

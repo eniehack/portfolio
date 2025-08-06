@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../tailwind.config.js";
+@plugin "@tailwindcss/typography";
 
 @layer components {
     .title {
