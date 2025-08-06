@@ -1,5 +1,5 @@
 {% set title = metadata.title %}
-{% extends "layouts/base.njk" %}
+{% extends "layouts/tailwind.njk" %}
 
 {% block head %}
 <style>
@@ -21,15 +21,12 @@
 </style>
 {% endblock %}
 
-{% block breadcrumb %}
-  {% renderTemplate "webc", {title: title} %}
-    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: "..", text: "レシピ"}, {href: ".", text: title}]'></breadcrumb-list>
-  {% endrenderTemplate %}
+{% block header %}
 {% endblock %}
 
 {% block main %}
     <article class="h-recipe" itemscope itemtype="https://schema.org/Recipe">
-        <h1 class="p-name" itemprop="name">{{metadata.title}}</h1>
+        <h1 class="p-name title" itemprop="name">{{metadata.title}}</h1>
         <ul class="categories">
             {%- for tag in metadata.tags %}
             <li class="p-category">{{tag}}</li>
@@ -39,12 +36,12 @@
             {{metadata.note}}
         </p>
         <section id="ingredients">
-            <h2>材料</h2>
+            <h2 class="subtitle">材料</h2>
             <div>
                 <p>
                     <data class="p-yield" itemprop="recipeYield" value="{{metadata.servings}}">{{metadata.servings}}</data>人前
                 </p>
-                <ul>
+                <ul class="list-disc pl-5">
                     {%- for ingredient in ingredients %}
                         <li class="p-ingredient" itemprop="recipeIngredient">
                         <span class="p-ingredient">
@@ -56,9 +53,9 @@
             </div>
         </section>
         <section id="instructions">
-            <h2>つくり方</h2>
+            <h2 class="subtitle">つくり方</h2>
             <div class="e-instructions">
-                <ol>
+                <ol class="list-decimal pl-5">
                     {%- for step in steps %}
                         <li itemprop="recipeInstructions" itemscope itemtype="https://schema.org/HowtoStep">
                             <span itemprop="text">{{step | safe}}</span>
@@ -66,8 +63,6 @@
                     {% endfor -%}
                 </ol>
             </div>
-        <section>
-        <section>
         {% if metadata.source %}
             {% if "http" in metadata.source %}
                 <p><a href="{{ metadata.source }}">Source</a></p>
@@ -75,15 +70,24 @@
                 <p>Source: {{ metadata.source }}</p>
             {% endif %}
         {% endif %}
-        </section>
-        <details>
+        <details class="pt-4">
 	        <summary><code>{{ page.fileSlug }}.cook</code></summary>
 	        <pre style="text-wrap: wrap">
 	    	    {{- content | safe }}
 	        </pre>
 	    </details>
     </article>
-    <a href="https://microformats.org/wiki/h-recipe">
-        <img src="http://www.boogdesign.com/images/buttons/microformat_enabled.png" />
-    </a>
+    <aside class="mt-5">
+        <a href="https://microformats.org/wiki/h-recipe">
+            <img src="http://www.boogdesign.com/images/buttons/microformat_enabled.png" />
+        </a>
+    </aside>
+{% endblock %}
+
+{% block footer %}
+{% renderTemplate "webc", {title: title} %}
+  <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: "..", text: "レシピ"}, {href: ".", text: title}]'></breadcrumb-list>
+{% endrenderTemplate %}
+
+{% include "footer.njk" %}
 {% endblock %}

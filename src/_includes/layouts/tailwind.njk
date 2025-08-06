@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="{{ '/assets/favicon.ico' | htmlBaseUrl }}" />
+    <title>{{ title }} - なかやばしのページ</title>
+    {% include "../ogp.njk" %}
+    <link rel="stylesheet" href="{% getBundleFileUrl "css" %}" />
+    <link rel="stylesheet" href="{{ '/assets/style.css' | htmlBaseUrl }}" />
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header class="container">
+        {% block header %}
+        {% endblock %}
+    </header>
+    <main class="container">
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer class="container pt-8">
+        {% block footer %}
+            {% include "footer.njk" %}
+        {% endblock %}
+    </footer>
+</body>
+</html>
