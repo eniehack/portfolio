@@ -24,6 +24,11 @@
         {% block main %}
         {% endblock %}
     </main>
-    {% include "footer.njk" %}
+    <hr />
+    <footer>
+        {% block footer %}
+            {% include "footer.njk" %}
+        {% endblock %}
+    </footer>
 </body>
 </html>

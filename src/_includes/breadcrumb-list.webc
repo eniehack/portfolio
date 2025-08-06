@@ -1,7 +1,7 @@
 <div webc:root="override">
     <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
         <li webc:for="(item, index) of items" class="breadcrumb-list__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a rel="nofollow" :href="htmlBaseUrl(item.href)" itemprop="item">
+            <a class="text-blue-600" rel="nofollow" :href="htmlBaseUrl(item.href)" itemprop="item">
                 <span @text="item.text" itemprop="name"><span>
             </a>
             <meta itemprop="position" :content="index + 1" />
