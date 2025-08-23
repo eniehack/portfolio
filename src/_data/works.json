@@ -2,6 +2,7 @@
     "software": [
         {
             "id": "itf-vendingmachine",
+            "tags": ["svelte", "maplibre-gl-js"],
             "links": [
                 {
                     "href": "https://github.com/eniehack/itf-vendingmachine",
@@ -30,7 +31,7 @@
             ],
             "title": "scrapbox-planetarium",
             "description": "scrapboxのリンク構造をプラネタリウムのように可視化するプログラムです",
-            "tag": ["sveltekit", "scrapbox"]
+            "tags": ["sveltekit", "scrapbox"]
         },
         {
             "id": "monoxa",
@@ -42,7 +43,7 @@
             ],
             "title": "monoxa（モノグサ）",
             "description": "文字を書くのではなく話すことによって日記を付けられるサービスです",
-            "tag": ["sveltekit", "golang", "firebase"]
+            "tags": ["sveltekit", "golang", "firebase"]
         },
         {
             "id": "planet-eniehack",
@@ -54,7 +55,7 @@
             ],
             "title": "planet eniehack",
             "description": "日々の活動などを記録し、1つのWebページにまとめることができるソフトウェアです",
-            "tag": ["golang"]
+            "tags": ["golang"]
         },
         {
             "id": "tokyodome-scaler",
@@ -74,7 +75,7 @@
             ],
             "title": "tokyodome-scaler",
             "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
-            "tag": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
+            "tags": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
         }
     ],
     "slides": [
