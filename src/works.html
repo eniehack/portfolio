@@ -3,38 +3,62 @@ title: 制作物
 date: Last Modified
 ---
 
-{% extends "layouts/base.njk" %}
+{% extends "layouts/tailwind.njk" %}
 
-{% block breadcrumb %}
+{% block head%}
+<style>
+    {% for item in works.software %}
+        {% if item.bg %}
+    #work_{{item.id}}:hover {
+        background-image: 
+            linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('{{item.bg | htmlBaseUrl}}');
+        background-blend-mode: normal;
+    }
+        {% endif %}
+    {% endfor %}
+</style>
+{% endblock %}
+
+{% block header %}
   {% renderTemplate "webc" %}
     <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "制作物"}]'></breadcrumb-list>
   {% endrenderTemplate %}
 {% endblock %}
 
 {% block main %}
-<article>
+<article class="prose max-w-[inherit]">
     <section>
         <h1>制作物</h1>
         <section id="programs">
-            <h1>ソフトウェア</h1>
+            <h1 class="text-2xl">ソフトウェア</h1>
+            <div class="flex flex-wrap gap-3 w-3/4">
             {% for item in works.software %}
-            <section id="work_{{item.id}}">
-                <h1>{{item.title}}</h1>
+            {% if item.bg %}
+                {% set class = 'py-5 w-full md:max-w-[300px] md:w-1/2 lg:w-1/3 md:px-2 hover:bg-center' %}
+            {% else %}
+                {% set class = "py-5 w-full md:max-w-[300px] md:w-1/2 lg:w-1/3 md:px-2" %}
+            {% endif %}
+            <section id="work_{{item.id}}" class="{{class}}">
+                <h1 class="text-lg">{{item.title}}</h1>
                 <div class="tags">
                     {% for tag in item.tags %}
-                    <span>{{tag}}</span>
+                    <span class="px-1 py-0.5 border rounded-md">{{tag}}</span>
                     {% endfor %}
                 </div>
-                <p>{{item.description}}</p>
-                {% for link in item.links %}
-                <a href="{{link.href}}">{{link.text}}</a>
-                {% endfor %}
+                <p class="mt-[0.5em]">{{item.description}}</p>
+                <div class="flex flex-wrap gap-2">
+                    {% for link in item.links %}
+                    <a href="{{link.href}}">{{link.text}}</a>
+                    {% endfor %}
+                </div>
             </section>
             {% endfor %}
+            </div>
             <p>その他、ここに掲載していないものが<a href="https://github.com/eniehack?tab=repositories">GitHub</a>や<a href="https://scrapbox.io/eniehack/%E3%81%A4%E3%81%8F%E3%81%A3%E3%81%9F">scrapbox</a>にもあります</p>
         </section>
         <section id="slides">
-            <h1>スライド</h1>
+            <h1 class="text-2xl">スライド</h1>
             <ul>
                 {% for item in works.slides %}
                 <li id="slides_{{item.id}}"><a href="{{item.href}}">『{{item.title}}』</a> @ {{item.event}}</li>

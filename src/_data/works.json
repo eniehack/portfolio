@@ -14,6 +14,7 @@
                 }
             ],
             "title": "筑波大学自販機Map",
+            "bg": "/assets/img/vendmap.png",
             "description": "筑波大学構内の自動販売機を探すことができるサイトです。データはすべてOpenStreetMap由来です。",
             "tag": ["sveltekit", "openstreetmap", "overpassapi"]
         },
@@ -30,6 +31,7 @@
                 }
             ],
             "title": "scrapbox-planetarium",
+            "bg": "/assets/img/scrapbox-planetarium.png",
             "description": "scrapboxのリンク構造をプラネタリウムのように可視化するプログラムです",
             "tags": ["sveltekit", "scrapbox"]
         },
@@ -74,8 +76,33 @@
                 }
             ],
             "title": "tokyodome-scaler",
+            "bg": "/assets/img/tokyodome-scaler.png",
             "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
             "tags": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
+        },
+        {
+            "id": "nikkiame",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/nikkiame-next",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "nikkiame",
+            "description": "",
+            "tags": ["laravel", "php"]
+        },
+        {
+            "id": "nikkiame",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/nikkiame-next",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "nikkiame",
+            "description": "",
+            "tags": ["laravel", "php"]
         }
     ],
     "slides": [
