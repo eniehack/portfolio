@@ -12,7 +12,7 @@ date: Last Modified
     #work_{{item.id}}:hover {
         background-image: 
             linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-            url('{{item.bg | htmlBaseUrl}}');
+            url('{{item.bg.image | htmlBaseUrl}}');
         background-blend-mode: normal;
     }
         {% endif %}
@@ -32,10 +32,12 @@ date: Last Modified
         <h1>制作物</h1>
         <section id="programs">
             <h1 class="text-2xl">ソフトウェア</h1>
-            <div class="flex flex-wrap gap-3 w-3/4">
+            <div class="flex flex-wrap gap-3 sm:w-3/4 md:w-[95%]">
             {% for item in works.software %}
-            {% if item.bg %}
+            {% if item.bg and item.bg.position == "center" %}
                 {% set class = 'py-5 w-full md:max-w-[300px] md:w-1/2 lg:w-1/3 md:px-2 hover:bg-center' %}
+            {% elif item.bg and item.bg.position == "left" %}
+                {% set class = 'py-5 w-full md:max-w-[300px] md:w-1/2 lg:w-1/3 md:px-2 hover:bg-left' %}
             {% else %}
                 {% set class = "py-5 w-full md:max-w-[300px] md:w-1/2 lg:w-1/3 md:px-2" %}
             {% endif %}

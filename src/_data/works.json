@@ -14,7 +14,10 @@
                 }
             ],
             "title": "筑波大学自販機Map",
-            "bg": "/assets/img/vendmap.png",
+            "bg": {
+                "image": "/assets/img/vendmap.png",
+                "position": "center"
+            },
             "description": "筑波大学構内の自動販売機を探すことができるサイトです。データはすべてOpenStreetMap由来です。",
             "tag": ["sveltekit", "openstreetmap", "overpassapi"]
         },
@@ -31,7 +34,10 @@
                 }
             ],
             "title": "scrapbox-planetarium",
-            "bg": "/assets/img/scrapbox-planetarium.png",
+            "bg": {
+                "image": "/assets/img/scrapbox-planetarium.png",
+                "position": "center"
+            },
             "description": "scrapboxのリンク構造をプラネタリウムのように可視化するプログラムです",
             "tags": ["sveltekit", "scrapbox"]
         },
@@ -76,7 +82,10 @@
                 }
             ],
             "title": "tokyodome-scaler",
-            "bg": "/assets/img/tokyodome-scaler.png",
+            "bg": {
+                "image": "/assets/img/tokyodome-scaler.png",
+                "position": "center"
+            },
             "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
             "tags": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
         },
@@ -89,20 +98,40 @@
                 }
             ],
             "title": "nikkiame",
-            "description": "",
+            "description": "旧友同士で近況を報告しあうためのブログサイトです。パスワードによって閲覧者を制限する機能を持っています。",
             "tags": ["laravel", "php"]
         },
         {
-            "id": "nikkiame",
+            "id": "hakodate-tram",
             "links": [
                 {
-                    "href": "https://github.com/eniehack/nikkiame-next",
+                    "href": "https://github.com/eniehack/hakodatetram-location-system",
                     "text": "GitHub"
                 }
             ],
-            "title": "nikkiame",
-            "description": "",
-            "tags": ["laravel", "php"]
+            "title": "函館市電ロケーションシステム",
+            "bg": {
+                "image": "/assets/img/hakodate-tram.png",
+                "position": "center"
+            },
+            "description": "北海道ロスが高じて、勝手に函館市電の列車の位置情報を地図上にプロットするシステムを作ってしまいました。公式よりかはイカす度は低め。",
+            "tags": ["svelte", "hono", "GTFS", "GTFS-RT"]
+        },
+        {
+            "id": "mechayabashi",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/mechayabashi",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "メカやばし",
+            "bg": {
+                "image": "/assets/img/mechayabashi.png",
+                "position": "left"
+            },
+            "description": "SNSの投稿を学習しマルコフ連鎖によって文章を生成するBotです。DiscordやMisskeyのBotとして動作します。ユーザのリアクションによって、文の評価をシステムにフィードバックする機能も持っています",
+            "tags": ["discordbot", "python"]
         }
     ],
     "slides": [
