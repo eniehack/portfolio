@@ -15,7 +15,7 @@
             ],
             "title": "筑波大学自販機Map",
             "bg": {
-                "image": "/assets/img/vendmap.png",
+                "image": "src/img/works/vendmap.png",
                 "position": "center"
             },
             "description": "筑波大学構内の自動販売機を探すことができるサイトです。データはすべてOpenStreetMap由来です。",
@@ -35,7 +35,7 @@
             ],
             "title": "scrapbox-planetarium",
             "bg": {
-                "image": "/assets/img/scrapbox-planetarium.png",
+                "image": "src/img/works/scrapbox-planetarium.png",
                 "position": "center"
             },
             "description": "scrapboxのリンク構造をプラネタリウムのように可視化するプログラムです",
@@ -83,7 +83,7 @@
             ],
             "title": "tokyodome-scaler",
             "bg": {
-                "image": "/assets/img/tokyodome-scaler.png",
+                "image": "src/img/works/tokyodome-scaler.png",
                 "position": "center"
             },
             "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
@@ -111,7 +111,7 @@
             ],
             "title": "函館市電ロケーションシステム",
             "bg": {
-                "image": "/assets/img/hakodate-tram.png",
+                "image": "src/img/works/hakodate-tram.png",
                 "position": "center"
             },
             "description": "北海道ロスが高じて、勝手に函館市電の列車の位置情報を地図上にプロットするシステムを作ってしまいました。公式よりかはイカす度は低め。",
@@ -127,7 +127,7 @@
             ],
             "title": "メカやばし",
             "bg": {
-                "image": "/assets/img/mechayabashi.png",
+                "image": "src/img/works/mechayabashi.png",
                 "position": "left"
             },
             "description": "SNSの投稿を学習しマルコフ連鎖によって文章を生成するBotです。DiscordやMisskeyのBotとして動作します。ユーザのリアクションによって、文の評価をシステムにフィードバックする機能も持っています",

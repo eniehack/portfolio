@@ -54,7 +54,7 @@
         "url": "https://210o.net/contact",
         "rel": ["acquaintance", "met"],
         "banner": {
-            "src": "/assets/img/210on_banner.png"
+            "src": "/img/mutual_links/210on_banner.png"
         }
     },
     {
@@ -75,7 +75,7 @@
         "url": "https://yuinoid.neocities.org/",
         "rel": ["contact"],
         "banner": {
-            "src": "/assets/img/yuinoid_banner.gif"
+            "src": "/img/mutual_links/yuinoid_banner.gif"
         },
         "description": "勝手にリンクさせてもらいました。分散型SNS年表の記述量に圧倒されます。"
     },
@@ -85,7 +85,7 @@
         "url": "https://itsu.dev/",
         "rel": ["contact", "met"],
         "banner": {
-            "src": "/assets/img/chururi-banner.svg",
+            "src": "/img/mutual_links/chururi-banner.svg",
             "width": 200,
             "height": 40
         }
@@ -96,7 +96,7 @@
         "url": "https://いなにわうどん.みんな/",
         "rel": ["contact", "met"],
         "banner": {
-            "src": "/assets/img/inaniwaudon-banner.png",
+            "src": "/img/mutual_links/inaniwaudon-banner.png",
             "height": 80,
             "width": 389
         }

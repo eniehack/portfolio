@@ -8,21 +8,20 @@ date: Last Modified
 {% block head %}
     {% for item in works.software %}
         {% if item.bg %}
-<link rel="preload" as="image" href="{{item.bg.image | htmlBaseUrl }}">
-        {% endif %}
-    {% endfor %}
+            {% setAsync "imageUrl" %}
+                {% getImageUrl item.bg.image %}
+            {% endsetAsync %}
+<link rel="preload" as="image" href="{{ imageUrl }}">
 <style>
-    {% for item in works.software %}
-        {% if item.bg %}
     #work_{{item.id}}:hover {
         background-image: 
             linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
-            url('{{item.bg.image | htmlBaseUrl}}');
+            url('{{ imageUrl | trim | htmlBaseUrl }}');
         background-blend-mode: normal;
     }
+</style>
         {% endif %}
     {% endfor %}
-</style>
 {% endblock %}
 
 {% block header %}

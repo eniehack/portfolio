@@ -20,28 +20,23 @@ date: Last Modified
         <div class="flex flex-wrap gap-2">
         {% for item in mutuallinks | sort(false, false, "type") %}
             {% if item.banner.src %}
-                {% if item.banner.src.charAt(1) === '/' %}
-                    {% set banner = item.banner.src | htmlBaseUrl %}
-                {% else %}
-                    {% set banner = item.banner.src %}
-                {% endif %}
                 {% if item.banner.width and item.banner.height %}
                 <div class="mutual_link">
-                    <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
-                        <img class="not-prose" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                    <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                        <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
                 {% else %}
                 <div class="mutual_link">
-                    <a class="inline-block border border-neutral-400" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
-                        <img class="not-prose" src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
+                    <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                        <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
                 {% endif %}
             {% elif item.avatar %}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 border border-transparent rounded-md p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                 <div class="flex flex-cols gap-2">
-                    <img class="size-8 not-prose" src="{{ item.avatar }}" />
+                    <img eleventy:ignore class="size-8 not-prose" src="{{ item.avatar }}" />
                     <span>{{item.name}}</span>
                 </div>
             </a>
@@ -70,7 +65,7 @@ date: Last Modified
 </article>
 <aside class="prose mt-8">
     <p>アイコンは<a href="https://icons.getbootstrap.com/icons/person-square/">Bootstrap Icon</a>から拝借しました</p>
-    <a href="http://gmpg.org/xfn"><img src="https://gmpg.org/xfn/xfn-btn.gif" alt="XFN Friendly" /></a>
+    <a href="http://gmpg.org/xfn"><img eleventy:ignore src="https://gmpg.org/xfn/xfn-btn.gif" alt="XFN Friendly" /></a>
 </aside>
 {% endblock %}
     

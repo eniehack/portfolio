@@ -4,9 +4,11 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import {filter as monoxaFilter, shortCode as monoxaShortCode} from "./src/_scripts/monoxa.js";
 import {extension as cookExtension} from "./src/_scripts/cooklang.js";
 import { tailwindProcessor } from "./src/_scripts/tailwindcss.js";
+import { filter as imageFilter } from "./src/_scripts/image.js";
 import postcss from "postcss";
 import tailwindcss from '@tailwindcss/postcss';
 import cssnanoPlugin from 'cssnano';
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -15,9 +17,17 @@ export default function (config) {
     })
     config.addPassthroughCopy("assets");
     config.addPlugin(EleventyRenderPlugin);
+    config.addPlugin(eleventyImageTransformPlugin, {
+        formats: ["webp", "png"],
+        transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
+    });
+
     config.addBundle("css");
     config.addPlugin(pluginWebc, {
-       components: "src/_includes/**/*.webc",
+        components: [
+            "src/_includes/**/*.webc",
+            "npm:@11ty/eleventy-img/*.webc",
+        ]
     })
     config.addPlugin(pluginRss);
 
@@ -39,6 +49,7 @@ export default function (config) {
     config.addFilter("newDate", monoxaFilter.newDate);
     config.addFilter("sortUpdates", monoxaFilter.sortUpdates);
     config.addFilter("reverseUpdates", monoxaFilter.reverseUpdates);
+    config.addShortcode("getImageUrl", imageFilter.getImageUrl);
     config.addShortcode("now", monoxaShortCode.now);
     config.addShortcode("date", monoxaShortCode.date);
 
