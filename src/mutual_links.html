@@ -21,13 +21,13 @@ date: Last Modified
         {% for item in mutuallinks | sort(false, false, "type") %}
             {% if item.banner.src %}
                 {% if item.banner.width and item.banner.height %}
-                <div class="mutual_link">
+                <div class="mutual_link not-prose">
                     <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                         <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
                 {% else %}
-                <div class="mutual_link">
+                <div class="mutual_link not-prose">
                     <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                         <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
@@ -35,8 +35,8 @@ date: Last Modified
                 {% endif %}
             {% elif item.avatar %}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 border border-transparent rounded-md p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
-                <div class="flex flex-cols gap-2">
-                    <img eleventy:ignore class="size-8 not-prose" src="{{ item.avatar }}" />
+                <div class="flex flex-cols gap-2 not-prose">
+                    <img class="size-8" src="{{ item.avatar }}" alt="{{item.name}}さんのavatar" />
                     <span>{{item.name}}</span>
                 </div>
             </a>
