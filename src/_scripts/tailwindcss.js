@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import postcss from "postcss";
+import tailwindcss from '@tailwindcss/postcss';
+import cssnanoPlugin from 'cssnano';
 
 /**
  * 
@@ -21,3 +24,18 @@ export const tailwindProcessor = async ({ input, output, processor }) => {
 
     fs.writeFileSync(outputCSSPath, result.css)
 }
+
+export const processPostcss = async ({ directories, runMode }) => {
+        const postcssPlugins = [
+            tailwindcss(),
+        ]
+        if (runMode === "build") {
+            postcssPlugins.push(cssnanoPlugin())
+        }
+        const postcssProcessor = postcss(postcssPlugins)
+        tailwindProcessor({
+            input: `${directories.input}/tailwind.css`,
+            output: `${directories.output}/assets/style.css`,
+            processor: postcssProcessor
+        })
+    }

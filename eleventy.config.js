@@ -3,12 +3,9 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import {filter as monoxaFilter, shortCode as monoxaShortCode} from "./src/_scripts/monoxa.js";
 import {extension as cookExtension} from "./src/_scripts/cooklang.js";
-import { tailwindProcessor } from "./src/_scripts/tailwindcss.js";
+import { processPostcss } from "./src/_scripts/tailwindcss.js";
 import { filter as imageFilter } from "./src/_scripts/image.js";
-import postcss from "postcss";
-import tailwindcss from '@tailwindcss/postcss';
-import cssnanoPlugin from 'cssnano';
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import { eleventyImageTransformPlugin, eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 export default function (config) {
@@ -21,6 +18,7 @@ export default function (config) {
         formats: ["webp", "png"],
         transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
     });
+    config.addPlugin(eleventyImageOnRequestDuringServePlugin);
 
     config.addBundle("css");
     config.addPlugin(pluginWebc, {
@@ -31,20 +29,7 @@ export default function (config) {
     })
     config.addPlugin(pluginRss);
 
-    config.on("eleventy.before", async ({ directories, runMode }) => {
-        const postcssPlugins = [
-            tailwindcss(),
-        ]
-        if (runMode === "build") {
-            postcssPlugins.push(cssnanoPlugin())
-        }
-        const postcssProcessor = postcss(postcssPlugins)
-        tailwindProcessor({
-            input: `${directories.input}/tailwind.css`,
-            output: `${directories.output}/assets/style.css`,
-            processor: postcssProcessor
-        })
-    });
+    config.on("eleventy.before", processPostcss);
 
     config.addFilter("newDate", monoxaFilter.newDate);
     config.addFilter("sortUpdates", monoxaFilter.sortUpdates);
