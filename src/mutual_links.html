@@ -18,29 +18,33 @@ date: Last Modified
     <section>
         <h1 class="text-4xl font-black mb-[21px] pb-10">相互リンク</h1>
         <div class="flex flex-wrap gap-2">
-        {% for item in mutuallinks | sort(false, false, "type") %}
-            {% if item.banner.src %}
-                {% if item.banner.width and item.banner.height %}
+        {%- for item in mutuallinks | sort(false, false, "type") -%}
+            {%- if item.banner.src -%}
+                {%- if item.banner.width and item.banner.height -%}
                 <div class="mutual_link not-prose">
                     <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
+                        {%- if item.banner.animation -%}
+                        <img class="not-prose border border-neutral-400" eleventy:widths="auto" eleventy:formats="auto" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                        {%- else -%}
                         <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" width="{{item.banner.width}}" height="{{item.banner.height}}" alt="{{item.name}}さんのサイトのバナー" />
+                        {%- endif -%}
                     </a>
                 </div>
-                {% else %}
+                {%- else -%}
                 <div class="mutual_link not-prose">
                     <a class="inline-block" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                         <img class="not-prose border border-neutral-400" eleventy:widths="auto" src="{{item.banner.src}}" alt="{{item.name}}さんのサイトのバナー" />
                     </a>
                 </div>
-                {% endif %}
-            {% elif item.avatar %}
+                {%- endif -%}
+            {%- elif item.avatar -%}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 border border-transparent rounded-md p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                 <div class="flex flex-cols gap-2 not-prose">
                     <img class="size-8" src="{{ item.avatar }}" alt="{{item.name}}さんのavatar" />
                     <span>{{item.name}}</span>
                 </div>
             </a>
-            {% else %}
+            {%- else -%}
             <a class="mutual_link hover:bg-blue-100 hover:border-blue-200 rounded-md border border-transparent p-3" href="{{ item.url }}" rel="{{ item.rel | join(" ") }} noopener">
                 <div class="flex flex-cols gap-2">
                     <div class="size-8 text-neutral-700 not-prose">
@@ -53,8 +57,8 @@ date: Last Modified
                     <span>{{item.name}}</span>
                 </div>
             </a>
-            {% endif %}
-        {% endfor %}
+            {%- endif -%}
+        {%- endfor -%}
         </div>
         </section>
     </section>
