@@ -2,7 +2,12 @@
     {
       "href": "/profile/",
       "internal_link": true,
-      "text": "プロフィール（工事中）"
+      "text": "プロフィール"
+    },
+    {
+      "href": "/works/",
+      "internal_link": true,
+      "text": "制作物"
     },
     {
       "href": "/mutual_links/",
@@ -15,12 +20,12 @@
       "text": "レシピ"
     },
     {
-      "href": "/diary",
+      "href": "https://www.eniehack.net/~eniehack/diary/",
       "text": "日記",
       "internal_link": true
     },
     {
-      "href": "/planet/",
+      "href": "https://www.eniehack.net/~eniehack/planet/",
       "internal_link": true,
       "text": "planet eniehack"
     }
