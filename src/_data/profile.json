@@ -3,52 +3,77 @@
         {
             "uri": "https://blog.eniehack.net/",
             "text": "ブログ",
-            "description": "技術的な内容を発信することが多いです。"
+            "description": "技術的な内容を発信することが多いです。",
+            "icon": false
         },
         {
             "uri": "https://scrapbox.io/eniehack/",
             "text": "scrapbox",
-            "description": ""
+            "description": "",
+            "icon": {
+                "url": "https://scrapbox.io/assets/img/favicon/apple-touch-icon-180.png"
+            }
         },
         {
             "uri": "https://twitter.com/eniehack/",
             "text": "twitter",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/x.svg"
+            }
         },
         {
             "uri": "https://mstdn.sublimer.me/@eniehack/",
             "text": "Fediverse",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/fediverse.png"
+            }
         },
         {
             "uri": "https://github.com/eniehack/",
             "text": "github",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/github.svg"
+            }
         },
         {
             "uri": "xmpp:eniehack@jabber.eniehack.net",
             "text": "XMPP/Jabber",
+            "icon": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/XMPP_logo.svg/240px-XMPP_logo.svg.png"
+            },
             "description": ""
         },
         {
             "uri": "https://zenn.dev/eniehack/",
             "text": "zenn",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/zenn.svg"
+            }
         },
         {
             "uri": "https://wikidata.org/wiki/User:Eniehack",
             "text": "wikidata",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/wikidata.svg"
+            }
         },
         {
             "uri": "https://listenbrainz.org/user/eniehack/",
             "text": "listenbrainz",
-            "description": ""
+            "icon": false
         },
         {
             "uri": "https://musicbrainz.org/user/eniehack/",
             "text": "musicbrainz",
-            "description": ""
+            "icon": {
+                "local": true,
+                "url": "/img/musicbrainz.svg"
+            }
         }
     ],
     "interests": [

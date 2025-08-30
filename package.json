@@ -19,6 +19,7 @@
     "@cooklang/cooklang-ts": "^1.2.7",
     "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "^0.5.16",
+    "cheerio": "^1.1.2",
     "cssnano": "^7.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"

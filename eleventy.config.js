@@ -3,6 +3,7 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import {filter as monoxaFilter, shortCode as monoxaShortCode} from "./src/_scripts/monoxa.js";
 import {extension as cookExtension} from "./src/_scripts/cooklang.js";
+import {shortcode as faviconShortcode} from "./src/_scripts/favicon.js";
 import { processPostcss } from "./src/_scripts/tailwindcss.js";
 import { filter as imageFilter } from "./src/_scripts/image.js";
 import { eleventyImageTransformPlugin, eleventyImageOnRequestDuringServePlugin } from "@11ty/eleventy-img";
@@ -35,6 +36,7 @@ export default function (config) {
     config.addFilter("sortUpdates", monoxaFilter.sortUpdates);
     config.addFilter("reverseUpdates", monoxaFilter.reverseUpdates);
     config.addShortcode("getImageUrl", imageFilter.getImageUrl);
+    config.addShortcode("getFavicon", faviconShortcode.getFavicon);
     config.addShortcode("now", monoxaShortCode.now);
     config.addShortcode("date", monoxaShortCode.date);
 
