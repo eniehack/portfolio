@@ -5,25 +5,32 @@ sitemap:
   priority: 0.5
 ---
 
-{% extends "layouts/base.njk" %}
+{% extends "layouts/tailwind.njk" %}
 
 {% block head %}
 <meta name="google-site-verification" content="InQfr6XGSjhc5_nXCh6mmjNerBLSBv0QON6VKPLYpfE" />
 {% endblock %}
 
 {% block main %}
-<article>
-    <h1>なかやばしのページ</h1>
-    <ul>
-        {% for link in links %}
-            {% if link.internal_link %}
-            <li><a href="{{ link.href | htmlBaseUrl }}">{{link.text}}</a></li>
-            {% else %}
-            <li><a href="{{ link.href }}">{{link.text}}</a></li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+<article class="prose max-w-[inherit]">
+    <section>
+        <h1 class="title">ようこそ！</h1>
+        <p>このサイトではなかやばしの自己紹介、備忘録などが含まれています</p>
+    </section>
+    <section>
+        <h2 class="subtitle">このサイトの主なページ</h2>
+        <ul>
+            {% for link in links %}
+                {% if link.internal_link %}
+                <li><a href="{{ link.href | htmlBaseUrl }}">{{link.text}}</a> - {{link.description}}</li>
+                {% else %}
+                <li><a href="{{ link.href }}">{{link.text}} - {{link.description}}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
 </article>
+<a href="{{'/profile/otaku' | htmlBaseUrl}}"></a>
 <a style="display: block; margin-bottom: 20px;" href="https://sites.google.com/view/happy-busy/" rel="noopener">
     <img src="/img/happybusy.png" alt="時間ねぇーバナー" />
 </a>

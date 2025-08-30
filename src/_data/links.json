@@ -2,31 +2,37 @@
     {
       "href": "/profile/",
       "internal_link": true,
-      "text": "プロフィール"
+      "text": "プロフィール",
+      "description": "自己紹介、連絡先などへのリンク集"
     },
     {
       "href": "/works/",
       "internal_link": true,
-      "text": "制作物"
+      "text": "制作物",
+      "description": "作成したプログラム、LTスライドなどへのリンク集"
     },
     {
       "href": "/mutual_links/",
       "internal_link": true,
-      "text": "相互リンク"
+      "text": "相互リンク",
+      "description": "このサイトと相互リンクしてもらっているサイトへのリンク集"
     },
     {
       "href": "/recipes/",
       "internal_link": true,
-      "text": "レシピ"
+      "text": "レシピ",
+      "description": "自炊したい料理の備忘録"
     },
     {
       "href": "https://www.eniehack.net/~eniehack/diary/",
       "text": "日記",
-      "internal_link": true
+      "internal_link": true,
+      "description": "日々の備忘録"
     },
     {
       "href": "https://www.eniehack.net/~eniehack/planet/",
       "internal_link": true,
-      "text": "planet eniehack"
+      "text": "planet eniehack",
+      "description": "わたしが行ったSNSの投稿を1つのページに"
     }
 ]
