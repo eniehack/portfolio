@@ -3,7 +3,7 @@ title: プロフィール
 date: Last Modified
 ---
 
-{% extends "layouts/base.njk" %}
+{% extends "layouts/tailwind.njk" %}
 
 {% block head %}
 <style>
@@ -29,23 +29,24 @@ section h1 {
 </style>
 {% endblock %}
 
-
-{% block breadcrumb %}
-  {% renderTemplate "webc" %}
-    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "プロフィール"}]'></breadcrumb-list>
-  {% endrenderTemplate %}
+{% block header %}
+    <div class="mt-[21px] pt-10">
+    {% renderTemplate "webc" %}
+        <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "プロフィール"}]'></breadcrumb-list>
+    {% endrenderTemplate %}
+    </div>
 {% endblock %}
 
 {% block main %}
-<article>
+<article class="prose max-w-[inherit]">
     <section class="h-card h-resume">
-        <h1>プロフィール</h1>
+        <h1 class="title">プロフィール</h1>
         <section id="biography">
-            <h1>名前</h1>
+            <h2>名前</h2>
             <p class="p-nickname">なかやばし</p>
         </section>
         <section id="interests">
-            <h1>興味・好きなもの</h1>
+            <h2>興味・好きなもの</h2>
             <ul class="commalist__items">
                 {% for item in profile.interests %}
                 <li class="commalist__item">{{item}}</li>
@@ -53,7 +54,7 @@ section h1 {
             </ul>
         </section>
         <section id="programming_skills">
-            <h1>プログラミング経験</h1>
+            <h2>プログラミング経験</h2>
             <ul class="commalist__items">
                 {% for item in profile.programming.skills %}
                 <li class="p-skill commalist__item">{{item}}</li>
@@ -61,7 +62,7 @@ section h1 {
             </ul>
         </section>
         <section>
-            <h1>趣味</h1>
+            <h2>趣味</h2>
             <ul>
                 <li>街歩き、知らない道を歩くこと</li>
                 <li>旅行</li>
@@ -80,26 +81,35 @@ section h1 {
             </div>
         </section>-->
         <section id="music">
-            <h1>好きなミュージシャン・曲</h1>
+            <h2>好きなミュージシャン・曲</h2>
             <ul>
                 {% for item in profile.music %}
                 <li>{{item}}</li>
                 {% endfor %}
             </ul>
             <p>
-                <a href="https://listenbrainz.org/user/eniehack/taste/">listenbrainz</a>にもあります。
+                好きな曲は<a href="https://listenbrainz.org/user/eniehack/taste/">listenbrainz</a>にもあります。
             </p>
         </section>
-        <section id="works">
-            <h1>制作物</h1>
-            <p><a href="{{"/works" | htmlBaseUrl }}">制作物</a>をご覧ください。</p>
-        </section>
         <section id="links">
-            <h1>リンク</h1>
+            <h2>リンク</h2>
             <ul>
-                {% for item in profile.links %}
-                <li><a class="p-contact u-url" href="{{item.uri}}" rel="me noopener">{{item.text}}</a></li>
-                {% endfor %}
+                {% for item in profile.links -%}
+                <li>
+                    <a class="not-prose grid grid-cols-[32px_1fr] gap-2" class="p-contact u-url" href="{{ item.uri }}" rel="me noopener">
+                        <div class="size-8 inline-block">
+                        {% if item.icon and item.icon.url -%}
+                            <img class="not-prose" src="{{ item.icon.url }}" alt="{{item.text}}のアイコン" width="32" height="32"/>
+                        {%- else -%}
+                            <img class="not-prose" src="/img/globe.svg" alt="globe icon" width="32" height="32"/>
+                        {% endif -%}
+                        </div>
+                        <span>
+                            {{- item.text -}}
+                        </span>
+                    </div>
+                </li>
+                {%- endfor %}
             </ul>
         </section>
     </section>

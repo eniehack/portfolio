@@ -75,7 +75,8 @@
         "url": "https://yuinoid.neocities.org/",
         "rel": ["contact"],
         "banner": {
-            "src": "/img/mutual_links/yuinoid_banner.gif"
+            "src": "/img/mutual_links/yuinoid_banner.gif",
+            "animation": true
         },
         "description": "勝手にリンクさせてもらいました。分散型SNS年表の記述量に圧倒されます。"
     },
