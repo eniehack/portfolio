@@ -25,15 +25,17 @@ date: Last Modified
 {% endblock %}
 
 {% block header %}
-  {% renderTemplate "webc" %}
-    <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "制作物"}]'></breadcrumb-list>
-  {% endrenderTemplate %}
+    <div class="mt-[21px] pt-10">
+    {% renderTemplate "webc" %}
+      <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "制作物"}]'></breadcrumb-list>
+    {% endrenderTemplate %}
+    </div>
 {% endblock %}
 
 {% block main %}
 <article class="prose max-w-[inherit]">
     <section>
-        <h1>制作物</h1>
+        <h1 class="title">制作物</h1>
         <section id="programs">
             <h1 class="text-2xl">ソフトウェア</h1>
             <div class="flex flex-wrap gap-3 sm:w-3/4 md:w-[95%]">

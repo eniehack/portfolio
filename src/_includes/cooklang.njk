@@ -22,6 +22,11 @@
 {% endblock %}
 
 {% block header %}
+<div class="mt-[21px] pt-10">
+    {% renderTemplate "webc" %}
+        <breadcrumb-list :items='[{href: "/", text: "トップ"}, {href: ".", text: "相互リンク"}]'></breadcrumb-list>
+    {% endrenderTemplate %}
+</div>
 {% endblock %}
 
 {% block main %}

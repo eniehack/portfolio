@@ -16,7 +16,7 @@ date: Last Modified
 {% block main %}
 <article class="prose max-w-[inherit]">
     <section>
-        <h1 class="text-4xl font-black mb-[21px] pb-10">相互リンク</h1>
+        <h1 class="title">相互リンク</h1>
         <div class="flex flex-wrap gap-2">
         {%- for item in mutuallinks | sort(false, false, "type") -%}
             {%- if item.banner.src -%}
