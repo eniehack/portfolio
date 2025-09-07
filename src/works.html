@@ -49,9 +49,9 @@ date: Last Modified
                 {%- endif -%}
                 <section id="work_{{item.id}}" class="{{class}}">
                     <h1 class="text-lg">{{item.title}}</h1>
-                    <div class="tags">
+                    <div class="tags flex flex-wrap gap-2">
                         {% for tag in item.tags -%}
-                        <span class="px-1 py-0.5 border rounded-md">{{tag}}</span>
+                        <span class="px-1 border rounded-md">{{tag}}</span>
                         {%- endfor %}
                     </div>
                     <p class="mt-[0.5em]">{{item.description}}</p>

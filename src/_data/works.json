@@ -42,28 +42,24 @@
             "tags": ["sveltekit", "scrapbox"]
         },
         {
-            "id": "monoxa",
-            "links": [
-                {
-                    "href": "https://www.eniehack.net/~eniehack/monoxa",
-                    "text": "プロジェクトページ"
-                }
-            ],
-            "title": "monoxa（モノグサ）",
-            "description": "文字を書くのではなく話すことによって日記を付けられるサービスです",
-            "tags": ["sveltekit", "golang", "firebase"]
-        },
-        {
             "id": "planet-eniehack",
             "links": [
                 {
                     "href": "https://github.com/eniehack/planet-someone",
                     "text": "GitHub"
+                },
+                {
+                    "href": "https://www.eniehack.net/~eniehack/planet",
+                    "text": "見てみる"
                 }
             ],
             "title": "planet eniehack",
             "description": "日々の活動などを記録し、1つのWebページにまとめることができるソフトウェアです",
-            "tags": ["golang"]
+            "bg": {
+                "image": "src/img/works/planet-eniehack.png",
+                "position": "center"
+            },
+            "tags": ["golang", "tailwindcss", "static-site-generator"]
         },
         {
             "id": "tokyodome-scaler",
@@ -88,18 +84,6 @@
             },
             "description": "よく聞く「東京ドーム何個分」という例えにいまいちピンとこなかったので地図の上に東京ドームを置いたり動かしたりできるようなサイトを作ってみました。",
             "tags": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
-        },
-        {
-            "id": "nikkiame",
-            "links": [
-                {
-                    "href": "https://github.com/eniehack/nikkiame-next",
-                    "text": "GitHub"
-                }
-            ],
-            "title": "nikkiame",
-            "description": "旧友同士で近況を報告しあうためのブログサイトです。パスワードによって閲覧者を制限する機能を持っています。",
-            "tags": ["laravel", "php"]
         },
         {
             "id": "hakodate-tram",
@@ -132,6 +116,118 @@
             },
             "description": "SNSの投稿を学習しマルコフ連鎖によって文章を生成するBotです。DiscordやMisskeyのBotとして動作します。ユーザのリアクションによって、文の評価をシステムにフィードバックする機能も持っています",
             "tags": ["discordbot", "python"]
+        },
+        {
+            "id": "jr-freight-map",
+            "links": [
+                {
+                    "href": "https://eniehack.github.io/jr-freight-map/",
+                    "text": "触ってみる"
+                },
+                {
+                    "href": "https://github.com/eniehack/jr-freight-map",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "JR貨物コンテナ列車map",
+            "bg": {
+                "image": "src/img/works/jr-freight-map.png",
+                "position": "center"
+            },
+            "description": "JR貨物のコンテナ列車の運行を眺められるサイトです。",
+            "tags": ["nextjs", "deck.gl", "openstreetmap", "python", "maplibre", "duckdb"]
+        },
+        {
+            "id": "atm-map",
+            "links": [
+                {
+                    "href": "https://atm-map.pages.dev/",
+                    "text": "触ってみる"
+                },
+                {
+                    "href": "https://github.com/eniehack/atm-map",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "atm-map",
+            "bg": {
+                "image": "src/img/works/atm-map.png",
+                "position": "center"
+            },
+            "description": "最寄りのATMの場所を探せるサイトです。OpenStreetMapのデータを利用しています。",
+            "tags": ["sveltekit", "maplibre", "openstreetmap", "turfjs"]
+        },
+        {
+            "id": "wiredify",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/wiredify",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "wiredify",
+            "description": "WIREDというニュースサイトがバ行をヴァ行で書く（例えば「バカンス」を「ヴァカンス」、「ジェネレーティブ」を「ジェネレーティヴ」などと書く）ことから、バ行とヴァ行の文字を相互変換するCLIアプリケーションを作りました",
+            "tags": ["golang", "cli-tool"]
+        },
+        {
+            "id": "fail2ban-cloudflare-action",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/fail2ban-cloudflare-action",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "fail2ban-cloudflare-action",
+            "description": "fail2banはiptablesなどのマシンのfirewallにルールを追加するのみで、cloudflare DNSを利用するとうまく機能しません。そのため、fail2banがcloudflare custom ruleにルールを追加できるようにプログラムを作成しました。",
+            "tags": ["python", "cli-tool", "golang", "cloudflare-api"]
+        },
+        {
+            "id": "discord-rss-bot",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/discord-rss-bot",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "discord-rss-bot",
+            "description": "RSSの投稿をdiscordのwebhookを使って流すプログラムです",
+            "tags": ["golang", "cli-tool", "discord"]
+        },
+        {
+            "id": "tilegen",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/tile-gen",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "tilegen",
+            "description": "空想地図をleafletで表示できるように、pdfを入力すると分割してpngにするCLIツールを作成しました。",
+            "tags": ["python", "cli-tool", "leaflet"]
+        },
+        {
+            "id": "nikkiame",
+            "links": [
+                {
+                    "href": "https://github.com/eniehack/nikkiame-next",
+                    "text": "GitHub"
+                }
+            ],
+            "title": "nikkiame",
+            "description": "旧友同士で近況を報告しあうためのブログサイトです。パスワードによって閲覧者を制限する機能を持っています。",
+            "tags": ["laravel", "php"]
+        },
+        {
+            "id": "monoxa",
+            "links": [
+                {
+                    "href": "https://www.eniehack.net/~eniehack/monoxa",
+                    "text": "プロジェクトページ"
+                }
+            ],
+            "title": "monoxa（モノグサ）",
+            "description": "文字を書くのではなく話すことによって日記を付けられるサービスです",
+            "tags": ["sveltekit", "golang", "firebase"]
         }
     ],
     "slides": [
