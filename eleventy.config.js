@@ -58,7 +58,7 @@ export default function (config) {
             data: "_data",
         },
         htmlTemplateEngine: "njk",
-        templateFormats: ["html", "njk", "webc"],
+        templateFormats: ["html", "njk"],
         pathPrefix: process.env.NODE_ENV === "production" ? "/~eniehack/" : "/",
     }
 }
