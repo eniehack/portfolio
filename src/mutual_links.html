@@ -14,6 +14,26 @@ date: Last Modified
 {% endblock %}
 
 {% block main %}
+<script type="application/ld+json">
+{
+  "@context": {
+    "foaf": "http://xmlns.com/foaf/0.1/"
+  },
+  "@id": "https://www.eniehack.net/~eniehack/mutual_links",
+  "@type": "foaf:Person",
+  "foaf:name": "なかやばし",
+  "foaf:homepage": { "@id": "https://www.eniehack.net/~eniehack/" },
+  "foaf:knows": [
+{%- for item in mutuallinks %}
+    {
+      "@type": "foaf:Person",
+      "foaf:name": "{{item.name}}",
+      "foaf:homepage": { "@id": "{{item.url}}" }
+    }{%- if not loop.last -%},{%- endif -%}
+{% endfor %}
+  ]
+}
+</script>
 <article class="prose max-w-[inherit]">
     <section>
         <h1 class="title">相互リンク</h1>
