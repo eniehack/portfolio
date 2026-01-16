@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head profile="http://dublincore.org/specifications/dublin-core/dc-html/2008-08-04/">
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="{{ "/assets/favicon.ico" | htmlBaseUrl }}" />
     <title>{{ title }} - なかやばしのページ</title>
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" >
+    <link rel="schema.XSD" href="http://www.w3.org/2001/XMLSchema#" >
+    <meta name="DC.title" lang="ja" content="{{ title }}" />
+    <meta name="DCTERMS.modified" scheme="XSD.date" content="{{ page.date | toISO8601 }}" />
     {% include "../ogp.njk" %}
     <link rel="stylesheet" href="{% getBundleFileUrl "css" %}" />
     {% block head %}
     {% endblock %}
+    <script type="application/ld+json">
+    {
+        "@context": {
+          "dcterms": "http://purl.org/dc/terms/"
+          "dc": "http://purl.org/dc/elements/1.1/"
+        },
+        "dc:title": "{{ title }}",
+        "dcterms:creator": "なかやばし",
+        "dcterms:modified": "{{ page.date | toISO8601 }}"
+    }
+    </script>
 </head>
 <body>
     <header>
